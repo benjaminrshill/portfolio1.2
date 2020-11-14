@@ -1,5 +1,5 @@
 const kCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'],
-    allEls = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, p, img, .portfolio, .contact')),
+    allEls = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, p, img, section, .contact')),
     matrix = [
         '@-!', 'ERROR', '$_BUMP', 'pango--', 'HELP ME', 'what did you say what did you say what',
         'ring-a-ring o---! ro$es, a pocket fu1l of posies', 'a-tishoo, a-tishoo, we all f@ll d0wn',

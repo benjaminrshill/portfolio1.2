@@ -15,6 +15,7 @@ $b-type: 'Sanchez', Georgia, Times, serif;
 body {
   background: $a-color;
   font-family: $a-type;
+  overflow-x: hidden;
 }
 
 a {
