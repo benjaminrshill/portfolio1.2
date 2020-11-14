@@ -1,4 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&family=Raleway:wght@200;400;700&display=swap');
+
+$a-color: #111;
+$b-color: #ff3541;
+$c-color: #eee;
+$a-type: 'Raleway', Helvetica, Arial, sans-serif;
+$b-type: 'Sanchez', Georgia, Times, serif;
+
+* {
+  margin: auto;
+  box-sizing: border-box;
+  font-size: 4vw;
+}
+
 body {
-  background: red;
-  font-size: 10px;
+  background: $a-color;
+  font-family: $a-type;
+}
+
+a {
+  color: $a-color;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+p {
+  font-family: $b-type;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  width: 96vw;
+  height: 2.6rem;
+  margin-top: 1vh;
+
+  div {
+    margin: auto 1vw;
+  }
+
+  h1, h2 {
+    font-size: 1.3rem;
+    line-height: 1rem;
+    color: $b-color;
+  }
+
+  h2 {
+    font-weight: 400;
+  }
+
+  .logo {
+    img {
+      width: 10vw;
+    }
+  }
+
+}
+
+nav {
+  position: absolute;
+  top: 2vw;
+  right: 2vw;
+
+  button {
+    border: 0;
+    padding: 0;
+    width: 10vw;
+    height: 10vw;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    div {
+      width: 100%;
+      height: 12%;
+      background: $b-color;
+    }
+  }
+
+  > div {
+    display: none;
+    flex-direction: column;
+    &.showHide {
+      display: flex;
+    }
+    div {
+      display: flex;
+      width: 10vw;
+      height: 10vw;
+      margin: 2vw 0;
+      line-height: 0;
+      background: $b-color;
+      border-radius: 100%;
+      img {
+        width: 8vw;
+      }
+    }
+
+  }
+}
+
+@media screen and (min-width: 600px) {
+
+  header {
+    flex-direction: row-reverse;
+    justify-content: center;
+    text-align: right;
+    height: 1rem;
+
+    h1, h2 {
+      font-size: 0.5rem;
+      line-height: 0.4rem;
+      color: $b-color;
+    }
+
+    .logo {
+      img {
+        width: 4vw;
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    line-height: 0;
+
+    button {
+      display: none;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 11vw;
+      height: 3vw;
+      div {
+        width: 3vw;
+        height: 3vw;
+        margin: 0;
+        background: $b-color;
+        border-radius: 100%;
+        img {
+          width: 2vw;
+        }
+      }
+
+    }
+  }
+
 }
