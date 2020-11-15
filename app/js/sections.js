@@ -27,9 +27,8 @@ const items = [
             "title": "Item Three",
             "miniDesc": "Mini description",
             "desc":
-                "Mystical elliptical, Presto Polaris, Karmic flamed future when Saturn and Aries\n" +
                 "And now I'm a fish called \"Father\" With gills type dizzy, Blowing liquid lullabies through the spine of time, I'm\n" +
-                "Certain of Saturn rivers, and all else is fact, So baptize me in the stars And wrap me in nighttime, moon blue\n" +
+                "Certain of Saturn's rivers, and all else is fact, So baptize me in the stars And wrap me in nighttime, moon blue\n" +
                 "Pupil my sight with orange balls of light And echo my plight Through the corridors of metaphor\n" +
                 "What else are we living for, if not to create Fiction and rhyme?\n" +
                 "My purpose is to make my soul Rhyme with my mind over matter\n" +

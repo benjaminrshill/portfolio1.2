@@ -15,7 +15,7 @@ var items = [[{
 }], [{
   "title": "Item Three",
   "miniDesc": "Mini description",
-  "desc": "Mystical elliptical, Presto Polaris, Karmic flamed future when Saturn and Aries\n" + "And now I'm a fish called \"Father\" With gills type dizzy, Blowing liquid lullabies through the spine of time, I'm\n" + "Certain of Saturn rivers, and all else is fact, So baptize me in the stars And wrap me in nighttime, moon blue\n" + "Pupil my sight with orange balls of light And echo my plight Through the corridors of metaphor\n" + "What else are we living for, if not to create Fiction and rhyme?\n" + "My purpose is to make my soul Rhyme with my mind over matter\n" + "Minds create matter minds create fiction\n" + "As a matter of fact as if, matter were fact Matter is fact\n" + "So spirit must be fiction, science fiction, art fiction, meta fiction",
+  "desc": "And now I'm a fish called \"Father\" With gills type dizzy, Blowing liquid lullabies through the spine of time, I'm\n" + "Certain of Saturn's rivers, and all else is fact, So baptize me in the stars And wrap me in nighttime, moon blue\n" + "Pupil my sight with orange balls of light And echo my plight Through the corridors of metaphor\n" + "What else are we living for, if not to create Fiction and rhyme?\n" + "My purpose is to make my soul Rhyme with my mind over matter\n" + "Minds create matter minds create fiction\n" + "As a matter of fact as if, matter were fact Matter is fact\n" + "So spirit must be fiction, science fiction, art fiction, meta fiction",
   "image": "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1162&q=80",
   "link": "https://example.com"
 }], [{
