@@ -32,8 +32,7 @@ header {
   display: flex;
   justify-content: flex-start;
   width: $a-width;
-  height: 2.6rem;
-  margin: 2vh auto;
+  margin: 2vw auto;
 
   div {
     margin: auto 1vw;
@@ -64,7 +63,7 @@ nav {
   position: absolute;
   top: 0;
   width: $a-width;
-  margin: 1vh auto;
+  margin: 0.5vw auto;
 
   button {
     border: 0;
@@ -115,7 +114,6 @@ main {
   grid-template-columns: 1fr;
   row-gap: 2vw;
   width: $a-width;
-  margin: 2vh auto;
 
   section {
     display: grid;
@@ -190,6 +188,7 @@ main {
     top: 1vw;
     right: 2vw;
     width: 11vw;
+    margin: 1.5vw auto;
 
     button {
       display: none;
@@ -252,6 +251,7 @@ main {
         padding: 0;
         background: rgba(17, 17, 17, 0.9);
         transition: all 0.5s ease;
+        overflow-y: scroll;
         &.showHide {
           visibility: visible;
           opacity: 1;
