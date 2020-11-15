@@ -5,6 +5,7 @@ $b-color: #ff3541;
 $c-color: #eee;
 $a-type: 'Raleway', Helvetica, Arial, sans-serif;
 $b-type: 'Sanchez', Georgia, Times, serif;
+$a-width: 96vw;
 
 * {
   margin: auto;
@@ -30,9 +31,9 @@ h1, h2, h3, h4 {
 header {
   display: flex;
   justify-content: flex-start;
-  width: 96vw;
+  width: $a-width;
   height: 2.6rem;
-  margin: 1vh auto;
+  margin: 2vh auto;
 
   div {
     margin: auto 1vw;
@@ -60,10 +61,10 @@ nav {
   z-index: 10;
   display: grid;
   grid-template-columns: 1fr 10vw;
-  flex-direction: row-reverse;
   position: absolute;
   top: 0;
-  width: 98vw;
+  width: $a-width;
+  margin: 1vh auto;
 
   button {
     border: 0;
@@ -112,14 +113,14 @@ nav {
 main {
   display: grid;
   grid-template-columns: 1fr;
-  width: 96vw;
+  row-gap: 2vw;
+  width: $a-width;
   margin: 2vh auto;
 
   section {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 60vw 1fr;
-    margin: 0 auto 1vh auto;
     border: 1px solid $b-color;
 
     img {
@@ -169,7 +170,7 @@ main {
     flex-direction: row-reverse;
     justify-content: center;
     text-align: right;
-    height: 1rem;
+    max-height: 1rem;
 
     h1, h2 {
       font-size: 0.5rem;
@@ -185,13 +186,10 @@ main {
   }
 
   nav {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
+    grid-template-columns: 1fr;
     top: 1vw;
     right: 2vw;
-    width: auto;
-    line-height: 0;
+    width: 11vw;
 
     button {
       display: none;
@@ -200,10 +198,9 @@ main {
     > div {
       visibility: visible;
       opacity: 1;
-      flex-direction: row;
       justify-content: space-between;
+      right: 0;
       width: 11vw;
-      height: 3vw;
       div {
         width: 3vw;
         height: 3vw;
@@ -221,7 +218,6 @@ main {
   main {
     grid-template-columns: 1fr 1fr;
     column-gap: 2vw;
-    row-gap: 2vw;
 
     section {
       grid-template-rows: calc(20vw + 10vh);
