@@ -1,7 +1,7 @@
 "use strict";
 
 var navButton = document.querySelector('nav button');
-var navItems = document.querySelector('nav > div');
+var navItems = document.querySelectorAll('nav > div');
 navButton.addEventListener('click', function () {
   navItems.classList.toggle('showHide');
 });
