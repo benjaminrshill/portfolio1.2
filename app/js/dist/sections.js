@@ -21,7 +21,7 @@ var items = [[{
 }], [{
   "title": "Item Four",
   "miniDesc": "Mini description",
-  "desc": "Wingless angels\n" + "Stroll atop shapeless cotton balls\n" + "With halos in your syringe\n" + "Celestial ground is found, broken\n" + "Exposing a bottomless depth\n" + "Where heartless spines awake to devour the small piece of your soul that's left\n" + "You're immersed in sound, floating\n" + "Aimless destination\n" + "Drop anchor to gain stability\n" + "Sterile potions restrain fertility\n" + "Pedestal talk is a token soaked in pockets where lives' topics lack conceptual ridicule\n" + "The night breathes, but light's choking\n" + "Darkness occupies the throne where poems are persecuted\n" + "The purity of time diluted\n" + "Rhymes are executed for genre, I'm told\n" + "When has-beens attempt to cause heat to rise and wonder why they're trapped in the cold\n" + "Life's an origami box and I'm hidden within the fold\n" + "So when the yarn unravels I won't be caught by surprise\n" + "And as society's fabric of orthodoxies dismantle I'll see you embracing the pentagram within this crucifix disguise",
+  "desc": "Wingless angels Stroll atop shapeless cotton balls\n" + "With halos in your syringe Celestial ground is found, broken, " + "Exposing a bottomless depth, Where heartless spines awake to devour the small piece of your soul that's left\n" + "The night breathes, but light's choking, Darkness occupies the throne where poems are persecuted, The purity of time diluted\n" + "Life's an origami box and I'm hidden within the fold, So when the yarn unravels I won't be caught by surprise\n" + "And as society's fabric of orthodoxies dismantle I'll see you embracing the pentagram within this crucifix disguise",
   "image": "https://images.unsplash.com/photo-1536226957245-c83ec577a82e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
   "link": "https://www.example.com"
 }], [{
@@ -36,7 +36,7 @@ items.forEach(function (item, i) {
   var cleanUrl = item[0].link.replace(/^https*:\/\//, '');
   var pDesc = item[0].desc.replace(/\n/g, '</p><p>');
   var tabIndex = i + 3;
-  var content = '<section tabindex="' + tabIndex + '" role="button"><img alt="example" src="' + item[0].image + '" /><div class="itemHead"><h3 tabindex="' + tabIndex + '">' + item[0].title + '</h3><h4 tabindex="' + tabIndex + '">' + item[0].miniDesc + '</h4></div><div tabindex="' + tabIndex + '" class="itemBody"><a tabindex="' + tabIndex + '" href="' + item[0].link + '" target="_blank" rel="noopener noreferrer"><h5>' + cleanUrl + '</h5></a><p>' + pDesc + '</p></div></section>';
+  var content = '<section tabindex="' + tabIndex + '" role="button"><img alt="example" src="' + item[0].image + '" /><div class="triangle"></div><div class="itemHead"><h3 tabindex="' + tabIndex + '">' + item[0].title + '</h3><h4 tabindex="' + tabIndex + '">' + item[0].miniDesc + '</h4></div><div tabindex="' + tabIndex + '" class="itemBody"><a tabindex="' + tabIndex + '" href="' + item[0].link + '" target="_blank" rel="noopener noreferrer"><h5>' + cleanUrl + '</h5></a><p>' + pDesc + '</p></div></section>';
   portfolio.innerHTML += content;
 });
 //# sourceMappingURL=sections.js.map

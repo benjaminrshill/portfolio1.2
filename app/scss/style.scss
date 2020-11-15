@@ -114,6 +114,7 @@ main {
   grid-template-columns: 1fr;
   row-gap: 2vw;
   width: $a-width;
+  margin-bottom: 4vw;
 
   section {
     display: grid;
@@ -121,30 +122,42 @@ main {
     grid-template-rows: 60vw 1fr;
     border: 1px solid $b-color;
 
-    img {
-      grid-row: 1;
+    img, .triangle, .itemHead {
       grid-column: 1;
+      grid-row: 1;
       width: 100%;
       height: 100%;
+      transition: all 0.5s ease;
+    }
+    img {
       object-fit: cover;
-      clip-path: polygon(0 0, 0% 100%, 100% 0);
+    }
+    .triangle {
+      background: $a-color;
+      clip-path: polygon(100% 0, 0% 100%, 100% 100%);
     }
     .itemHead {
-      grid-row: 1;
-      grid-column: 1;
       z-index: 1;
+      grid-template-columns: 1fr;
       align-self: flex-end;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       text-align: right;
-      margin: 2vw 4vw;
       h3 {
+        margin: 0 1vw 0 0;
         color: $c-color;
         font-size: 2.5rem;
       }
       h4 {
+        margin: 0 1vw 0.5vw 0;
         color: $b-color;
         font-weight: 400;
         font-size: 1.8rem;
       }
+    }
+    &:hover .triangle, &:hover .itemHead {
+      opacity: 0.6;
     }
     .itemBody {
       width: 100%;
@@ -223,15 +236,11 @@ main {
       cursor: pointer;
 
       img {
-        grid-row: 1;
-        grid-column: 1;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        clip-path: polygon(0 0, 0% 100%, 100% 0);
       }
       .itemHead {
-        margin: 1vh 1vw;
         h3 {
           font-size: 1rem;
         }
