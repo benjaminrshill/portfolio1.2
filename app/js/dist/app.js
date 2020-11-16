@@ -67,8 +67,14 @@ document.addEventListener('keyup', function (event) {
 });
 sections.forEach(function (section, i) {
   section.addEventListener('click', function () {
-    hideSections();
-    showSection(i);
+    var viewSize = window.matchMedia("(min-width: 800px)");
+
+    if (viewSize.matches) {
+      hideSections();
+      showSection(i);
+    } else {
+      itemBodies[i].classList.toggle('showHide');
+    }
   });
   section.addEventListener('keyup', function (e) {
     switch (e.key) {

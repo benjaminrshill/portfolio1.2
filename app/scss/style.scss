@@ -164,9 +164,13 @@ main {
       color: $c-color;
       visibility: hidden;
       height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.5s ease;
       &.showHide {
         visibility: visible;
         height: auto;
+        opacity: 1;
       }
       h5 {
         padding: 5px 10px;
@@ -241,11 +245,6 @@ main {
       grid-template-rows: calc(20vw + 10vh);
       cursor: pointer;
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
       .itemHead {
         h3 {
           font-size: 1rem;
@@ -255,22 +254,13 @@ main {
         }
       }
       .itemBody {
-        visibility: hidden;
-        opacity: 0;
         z-index: 5;
         cursor: auto;
         grid-row: 1;
         grid-column: 1;
         height: 100%;
-        margin: 0;
-        padding: 0;
         background: rgba(17, 17, 17, 0.9);
-        transition: all 0.5s ease;
         overflow-y: scroll;
-        &.showHide {
-          visibility: visible;
-          opacity: 1;
-        }
         h5 {
           padding: 5px 0 10px 15px;
           font-size: 0.6rem;

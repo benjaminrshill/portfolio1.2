@@ -63,9 +63,14 @@ document.addEventListener('keyup', function(event) {
 });
 
 sections.forEach((section, i) => {
-    section.addEventListener('click', function() {
-        hideSections();
-        showSection(i);
+    section.addEventListener('click', function () {
+        let viewSize = window.matchMedia("(min-width: 800px)");
+        if (viewSize.matches) {
+            hideSections();
+            showSection(i);
+        } else {
+            itemBodies[i].classList.toggle('showHide');
+        }
     });
     section.addEventListener('keyup', function(e) {
         switch (e.key) {
