@@ -159,28 +159,73 @@ main {
     &:hover .triangle, &:hover .itemHead {
       opacity: 0.6;
     }
-    .itemBody {
-      width: 100%;
+  }
+}
+
+#overlay {
+  z-index: 49;
+  visibility: hidden;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  background: #000;
+  transition: 0.3s;
+  &.showHide {
+    visibility: visible;
+    opacity: 0.8;
+  }
+}
+
+#modal {
+  z-index: 50;
+  visibility: hidden;
+  display: flex;
+  position: fixed;
+  width: 95vw;
+  min-width: 300px;
+  max-width: 800px;
+  height: 85vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $a-color;
+  border: 1px solid $b-color;
+  opacity: 0;
+  transition: 0.5s;
+  &.showHide {
+    visibility: visible;
+    opacity: 1;
+  }
+  #itemBody {
+    width: 100%;
+    height: 100%;
+    color: $c-color;
+    overflow-y: scroll;
+    transition: all 0.5s ease;
+    &.showHide {
+      visibility: visible;
+      opacity: 1;
+    }
+    h4 {
+      margin: 1vw;
       color: $c-color;
-      visibility: hidden;
-      height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: all 0.5s ease;
-      &.showHide {
-        visibility: visible;
-        height: auto;
-        opacity: 1;
-      }
-      h5 {
-        padding: 5px 10px;
-        background: $b-color;
-      }
-      p {
-        margin: 2vh;
-        font-family: $b-type;
-        font-size: 15px;
-      }
+      font-size: 15px;
+    }
+    h5 {
+      padding: 5px 10px;
+      font-size: 15px;
+      background: $b-color;
+    }
+    p {
+      margin: 2vh;
+      font-family: $b-type;
+      font-size: 15px;
     }
   }
 }
@@ -240,11 +285,9 @@ main {
   main {
     grid-template-columns: 1fr 1fr;
     column-gap: 2vw;
-
     section {
       grid-template-rows: calc(20vw + 10vh);
       cursor: pointer;
-
       .itemHead {
         h3 {
           font-size: 1rem;
@@ -253,47 +296,29 @@ main {
           font-size: 0.6rem;
         }
       }
-      .itemBody {
-        z-index: 5;
-        cursor: auto;
-        grid-row: 1;
-        grid-column: 1;
-        height: 100%;
-        background: rgba(17, 17, 17, 0.9);
-        overflow-y: scroll;
-        &.showHide {
-          height: 100%;
-        }
-        h5 {
-          padding: 5px 0 10px 15px;
-          font-size: 0.6rem;
-          color: $a-color;
-        }
-        p {
-          margin: 1vw;
-          padding: 0;
-          font-size: 0.5rem;
-        }
-      }
     }
   }
 
+  #modal {
+    #itemBody {
+      overflow-y: scroll;
+      h4, h5 {
+        font-size: 20px;
+      }
+      h5 {
+        padding: 5px 0 10px 15px;
+        color: $a-color;
+      }
+      p {
+        margin: 1vw;
+        font-size: 18px;
+      }
+    }
+  }
 }
 
-@media screen and (min-width: 1300px) {
-
+@media screen and (min-width: 1600px) {
   main {
     grid-template-columns: 1fr 1fr 1fr;
-    section {
-      .itemBody {
-        h5 {
-          font-size: 0.3rem;
-        }
-        p {
-          font-size: 20px;
-        }
-      }
-    }
   }
-
 }
