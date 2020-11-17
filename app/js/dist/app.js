@@ -38,13 +38,14 @@ var overlay = document.querySelector('#overlay');
 var modal = document.querySelector('#modal');
 var itemBody = document.querySelector('#itemBody');
 var q = sections.length - 1;
-var x = 0;
+var p = 0;
+var initialX = null;
 navButton.addEventListener('click', function () {
   navItems.classList.toggle('showHide');
 });
 
 function showSection(i) {
-  x = i;
+  p = i;
   overlay.classList.add('showHide');
   modal.classList.add('showHide');
   switchContent(i);
@@ -54,18 +55,18 @@ function showSection(i) {
 function hideSection() {
   overlay.classList.remove('showHide');
   modal.classList.remove('showHide');
-  sections[x].querySelector('h3').focus();
+  sections[p].querySelector('h3').focus();
 }
 
 function prev() {
-  x > 0 ? x-- : x = q;
-  switchContent(x);
+  p > 0 ? p-- : p = q;
+  switchContent(p);
   focusLink();
 }
 
 function next() {
-  x < q ? x++ : x = 0;
-  switchContent(x);
+  p < q ? p++ : p = 0;
+  switchContent(p);
   focusLink();
 }
 
@@ -82,6 +83,27 @@ function focusLink() {
   }, 100);
 }
 
+function startTouch(e) {
+  initialX = e.touches[0].clientX;
+}
+
+function moveTouch(e) {
+  e.preventDefault();
+  if (initialX === null) return;
+  var currentX = e.touches[0].clientX;
+  var diffX = initialX - currentX;
+  diffX > 0 ? next() : prev();
+  initialX = null;
+}
+
+sections.forEach(function (section, i) {
+  section.addEventListener('click', function () {
+    showSection(i);
+  });
+  section.addEventListener('keyup', function (e) {
+    e.key === 'Enter' ? showSection(i) : null;
+  });
+});
 document.addEventListener('keyup', function (event) {
   event.preventDefault();
 
@@ -102,73 +124,12 @@ document.addEventListener('keyup', function (event) {
     }
   }
 });
-sections.forEach(function (section, i) {
-  section.addEventListener('click', function () {
-    showSection(i);
-  });
-  section.addEventListener('keyup', function (e) {
-    switch (e.key) {
-      case 'Enter':
-        showSection(i);
-        break;
-
-      default:
-        return;
-    }
-  });
-});
 document.addEventListener('keyup', function (e) {
-  switch (e.key) {
-    case 'Esc':
-    case 'Escape':
-      hideSection();
-      break;
-
-    default:
-      return;
-  }
+  e.key === 'Escape' ? hideSection() : null;
 });
 overlay.addEventListener('click', function () {
   hideSection();
 });
 modal.addEventListener("touchstart", startTouch, false);
 modal.addEventListener("touchmove", moveTouch, false);
-var initialX = null;
-var initialY = null;
-
-function startTouch(e) {
-  initialX = e.touches[0].clientX;
-  initialY = e.touches[0].clientY;
-}
-
-function moveTouch(e) {
-  if (initialX === null) {
-    return;
-  }
-
-  if (initialY === null) {
-    return;
-  }
-
-  var currentX = e.touches[0].clientX;
-  var currentY = e.touches[0].clientY;
-  var diffX = initialX - currentX;
-  var diffY = initialY - currentY;
-
-  if (Math.abs(diffX) > Math.abs(diffY)) {
-    if (diffX > 0) {
-      next();
-    } else {
-      prev();
-    }
-  } else {
-    if (diffY < 0) {
-      hideSection();
-    }
-  }
-
-  initialX = null;
-  initialY = null;
-  e.preventDefault();
-}
 //# sourceMappingURL=app.js.map
