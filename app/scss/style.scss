@@ -261,9 +261,13 @@ main {
         height: 100%;
         background: rgba(17, 17, 17, 0.9);
         overflow-y: scroll;
+        &.showHide {
+          height: 100%;
+        }
         h5 {
           padding: 5px 0 10px 15px;
           font-size: 0.6rem;
+          color: $a-color;
         }
         p {
           margin: 1vw;

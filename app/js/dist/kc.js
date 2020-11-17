@@ -1,63 +1,57 @@
-const kCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'],
-    allEls = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, p, img, section, .contact')),
-    matrix = [
-        '@-!', 'ERROR', '$_BUMP', 'pango--', 'HELP ME', 'what did you say what did you say what',
-        'ring-a-ring o---! ro$es, a pocket fu1l of posies', 'a-tishoo, a-tishoo, we all f@ll d0wn',
-        'no no no no no no no no no no', '6 6 6', 'merry_go_round', 'cataclysm.join();',
-        'a', 'b', 'z', 'u', 'jk', 'fr@k', 'Q', 'ooo', '! ! ! !', 'come out and play',
-        'Reference Error', 'What have you DONE?!'
-    ];
+"use strict";
 
-let sequence = [];
+window.addEventListener('DOMContentLoaded', function (event) {
+  var kCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+  var allEls = Array.from(document.querySelectorAll('h1, h2, h3, h4, nav, p, img, section, .itemHead, .itemBody'));
+  var matrix = ['@-!', 'ERROR', '$_BUMP', 'pango--', 'HELP ME', 'what did you say what did you say what', 'ring-a-ring o---! ro$es, a pocket fu1l of posies', 'a-tishoo, a-tishoo, we all f@ll d0wn', 'no no no no no no no no no no', '6 6 6', 'merry_go_round', 'cataclysm.join();', 'a', 'b', 'z', 'u', 'jk', 'fr@k', 'Q', 'ooo', '! ! ! !', 'come out and play', 'Reference Error', 'What have you DONE?!'];
+  var sequence = [];
 
-let compare = (arr1, arr2) => {
-    for (let i = 0; i < arr1.length; i++) {
-        if (arr1[i] !== arr2[i]) {
-            return false;
-        }
-    } return true;
-}
+  var compare = function compare(arr1, arr2) {
+    for (var i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) {
+        return false;
+      }
+    }
 
-let neo = (matrix) => {
-    let rand = (Math.floor(Math.random() * 30));
+    return true;
+  };
+
+  var neo = function neo(matrix) {
+    var rand = Math.floor(Math.random() * 30);
     return matrix[rand];
-}
+  };
 
-let hit = (allEls) => {
-    let boss = document.getElementById('ccm');
+  var hit = function hit(allEls) {
+    var boss = document.getElementById('ccm');
     document.body.classList.add('twitch');
     boss.classList.remove('hide');
     boss.classList.add('boss');
-    document.querySelectorAll('h3').forEach((el) => {
-        el.classList.add('glitch');
+    document.querySelectorAll('h3').forEach(function (el) {
+      el.classList.add('glitch');
     });
-    allEls.forEach(el => {
-        setTimeout(() => {
-            el.classList.add('fade');
-            el.textContent = neo(matrix);
-        }, Math.floor(Math.random() * 10000) + 1000);
-        setTimeout(() => {
-            el.classList.add('jump');
-        }, Math.floor(Math.random() * 10000) + 500);
+    allEls.forEach(function (el) {
+      setTimeout(function () {
+        el.classList.add('fade');
+        el.textContent = neo(matrix);
+      }, Math.floor(Math.random() * 10000) + 1000);
+      setTimeout(function () {
+        el.classList.add('jump');
+      }, Math.floor(Math.random() * 10000) + 500);
     });
-    setTimeout(() => {
-        boss.classList.remove('crouch');
+    setTimeout(function () {
+      boss.classList.remove('crouch');
     }, 8000);
-    setTimeout(() => {
-        document.querySelector('.boss p').innerHTML = 'G A M E &nbsp; O V E R .';
-        document.querySelector('.boss p').classList.add('type');
+    setTimeout(function () {
+      document.querySelector('.boss p').innerHTML = 'G A M E &nbsp; O V E R .';
+      document.querySelector('.boss p').classList.add('type');
     }, 10000);
-}
+  };
 
-document.addEventListener('keydown', (event) => {
-    kCode.includes(event.code) && compare(sequence, kCode)
-        ? sequence.push(event.code)
-        : sequence = [event.code];
+  document.addEventListener('keydown', function (event) {
+    kCode.includes(event.code) && compare(sequence, kCode) ? sequence.push(event.code) : sequence = [event.code];
+  });
+  document.addEventListener('keyup', function (event) {
+    sequence.length === kCode.length ? compare(sequence, kCode) ? hit(allEls) : null : null;
+  });
 });
-
-document.addEventListener('keyup', (event) => {
-    sequence.length === kCode.length
-        ? (compare(sequence, kCode) ? hit(allEls) : null)
-        : null;
-});
-
+//# sourceMappingURL=kc.js.map
