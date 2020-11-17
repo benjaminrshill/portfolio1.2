@@ -170,3 +170,42 @@ document.addEventListener('keyup', function(e) {
 overlay.addEventListener('click', function () {
     hideSection();
 });
+
+modal.addEventListener("touchstart", startTouch, false);
+modal.addEventListener("touchmove", moveTouch, false);
+
+let initialX = null;
+let initialY = null;
+
+function startTouch(e) {
+    initialX = e.touches[0].clientX;
+    initialY = e.touches[0].clientY;
+}
+
+function moveTouch(e) {
+    if (initialX === null) {
+        return;
+    }
+    if (initialY === null) {
+        return;
+    }
+    let currentX = e.touches[0].clientX;
+    let currentY = e.touches[0].clientY;
+    let diffX = initialX - currentX;
+    let diffY = initialY - currentY;
+
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX > 0) {
+            prev();
+        } else {
+            next();
+        }
+    } else {
+        if (diffY > 0) {
+            hideSection();
+        }
+    }
+    initialX = null;
+    initialY = null;
+    e.preventDefault();
+}
