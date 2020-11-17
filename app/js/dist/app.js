@@ -157,12 +157,12 @@ function moveTouch(e) {
 
   if (Math.abs(diffX) > Math.abs(diffY)) {
     if (diffX > 0) {
-      prev();
-    } else {
       next();
+    } else {
+      prev();
     }
   } else {
-    if (diffY > 0) {
+    if (diffY < 0) {
       hideSection();
     }
   }
