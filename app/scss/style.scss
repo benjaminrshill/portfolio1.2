@@ -33,21 +33,17 @@ header {
   justify-content: flex-start;
   width: $a-width;
   margin: 2vw auto;
-
   div {
     margin: auto 1vw;
   }
-
   h1, h2 {
     font-size: 1.3rem;
     line-height: 1rem;
     color: $b-color;
   }
-
   h2 {
     font-weight: 400;
   }
-
   .logo {
     img {
       width: 10vw;
@@ -64,7 +60,6 @@ nav {
   top: 0;
   width: $a-width;
   margin: 0.5vw auto;
-
   button {
     border: 0;
     padding: 0;
@@ -80,7 +75,6 @@ nav {
       background: $b-color;
     }
   }
-
   > div {
     visibility: hidden;
     opacity: 0;
@@ -93,7 +87,6 @@ nav {
       visibility: visible;
       opacity: 1;
     }
-
     div {
       display: flex;
       width: 10vw;
@@ -115,13 +108,11 @@ main {
   row-gap: 2vw;
   width: $a-width;
   margin-bottom: 4vw;
-
   section {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 60vw 1fr;
     border: 1px solid $b-color;
-
     img, .triangle, .itemHead {
       grid-column: 1;
       grid-row: 1;
@@ -190,9 +181,8 @@ main {
   width: 95vw;
   min-width: 300px;
   max-width: 800px;
-  height: 85vh;
-  top: 0;
-  bottom: 0;
+  height: 90vh;
+  top: 1vh;
   left: 0;
   right: 0;
   background: $a-color;
@@ -236,8 +226,7 @@ main {
   opacity: 0;
   position: fixed;
   width: 100vw;
-  height: 50px;
-  max-height: 5vh;
+  height: 8vh;
   bottom: 0;
   left: 0;
   right: 0;
@@ -263,31 +252,26 @@ main {
     justify-content: center;
     text-align: right;
     max-height: 1rem;
-
     h1, h2 {
       font-size: 0.5rem;
       line-height: 0.4rem;
       color: $b-color;
     }
-
     .logo {
       img {
         width: 4vw;
       }
     }
   }
-
   nav {
     grid-template-columns: 1fr;
     top: 1vw;
     right: 2vw;
     width: 11vw;
     margin: 1.5vw auto;
-
     button {
       display: none;
     }
-
     > div {
       visibility: visible;
       opacity: 1;
@@ -307,7 +291,6 @@ main {
 
     }
   }
-
   main {
     grid-template-columns: 1fr 1fr;
     column-gap: 2vw;
@@ -324,7 +307,6 @@ main {
       }
     }
   }
-
   #modal {
     #itemBody {
       overflow-y: scroll;
@@ -340,6 +322,9 @@ main {
         font-size: 18px;
       }
     }
+  }
+  #exit {
+    display: none;
   }
 }
 

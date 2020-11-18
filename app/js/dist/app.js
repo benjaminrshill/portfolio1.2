@@ -31,22 +31,26 @@ var items = [[{
   "image": "https://images.unsplash.com/photo-1507963901243-ebfaecd5f2f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2758&q=80",
   "link": "https://brownspunbear.github.io"
 }]];
-var navButton = document.querySelector('nav button');
-var navItems = document.querySelector('nav > div');
-var sections = Array.from(document.querySelectorAll('section'));
-var overlay = document.querySelector('#overlay');
-var exit = document.querySelector('#exit');
-var modal = document.querySelector('#modal');
-var itemBody = document.querySelector('#itemBody');
-var viewer = [overlay, modal, exit];
-var q = sections.length - 1;
-var p = 0;
-var initialX = 0;
-var moveX = 0;
-var finalX = 0; // FUNCTIONS
+var elements = {
+  navButton: document.querySelector('nav button'),
+  navItems: document.querySelector('nav > div'),
+  sections: Array.from(document.querySelectorAll('section')),
+  overlay: document.querySelector('#overlay'),
+  exit: document.querySelector('#exit'),
+  modal: document.querySelector('#modal'),
+  itemBody: document.querySelector('#itemBody')
+};
+var viewer = [elements.overlay, elements.modal, elements.exit];
+var vars = {
+  q: elements.sections.length - 1,
+  p: 0,
+  initialX: 0,
+  moveX: 0,
+  finalX: 0
+}; // FUNCTIONS
 
 function showSection(i) {
-  p = i;
+  vars.p = i;
   viewer.forEach(function (item) {
     return item.classList.add('showHide');
   });
@@ -58,18 +62,18 @@ function hideSection() {
   viewer.forEach(function (item) {
     return item.classList.remove('showHide');
   });
-  sections[p].querySelector('h3').focus();
+  elements.sections[vars.p].querySelector('h3').focus();
 }
 
 function prev() {
-  p > 0 ? p-- : p = q;
-  switchContent(p);
+  vars.p > 0 ? vars.p-- : vars.p = vars.q;
+  switchContent(vars.p);
   focusLink();
 }
 
 function next() {
-  p < q ? p++ : p = 0;
-  switchContent(p);
+  vars.p < vars.q ? vars.p++ : vars.p = 0;
+  switchContent(vars.p);
   focusLink();
 }
 
@@ -77,85 +81,86 @@ function switchContent(i) {
   var cleanUrl = items[i][0].link.replace(/^https*:\/\//, '');
   var pDesc = items[i][0].desc.replace(/\n/g, '</p><p>');
   var tabIndex = i + 3;
-  itemBody.innerHTML = '<h4>' + items[i][0].title + '</h4><a tabindex="' + tabIndex + '" href="' + items[i][0].link + '" target="_blank" rel="noopener noreferrer"><h5>' + cleanUrl + '</h5></a><p>' + pDesc + '</p>';
+  elements.itemBody.innerHTML = '<h4>' + items[i][0].title + '</h4><a tabindex="' + tabIndex + '" href="' + items[i][0].link + '" target="_blank" rel="noopener noreferrer"><h5>' + cleanUrl + '</h5></a><p>' + pDesc + '</p>';
 }
 
 function focusLink() {
   setTimeout(function () {
-    itemBody.querySelector('a').focus();
+    elements.itemBody.querySelector('a').focus();
   }, 100);
 }
 
 function startTouch(e) {
-  initialX = e.touches[0].clientX;
+  vars.initialX = e.touches[0].clientX;
 }
 
 function moveTouch(e) {
   e.preventDefault();
-  if (initialX === 0) return;
-  moveX = e.touches[0].clientX;
-  finalX = initialX - moveX;
-  modal.style.transform = 'translate(' + (0 - finalX) + 'px)';
+  if (vars.initialX === 0) return;
+  vars.moveX = e.touches[0].clientX;
+  vars.finalX = vars.initialX - vars.moveX;
+  elements.modal.style.transform = 'translate(' + (0 - vars.finalX) + 'px)';
 }
 
 function endTouch() {
   var screenWidth = window.innerWidth;
 
-  if (finalX > 100) {
-    modal.style.transform = 'translate(-' + screenWidth + 'px) scale(0.5)';
+  if (vars.finalX > 100) {
+    elements.modal.style.transform = 'translate(-' + screenWidth + 'px) scale(0.5)';
     setTimeout(function () {
       return finishSwipe('left');
     }, 300);
-  } else if (finalX < -100) {
-    modal.style.transform = 'translate(' + screenWidth + 'px) scale(0.5)';
+  } else if (vars.finalX < -100) {
+    elements.modal.style.transform = 'translate(' + screenWidth + 'px) scale(0.5)';
     setTimeout(function () {
       return finishSwipe('right');
     }, 300);
   } else {
-    modal.style.transform = 'translate(0)';
+    elements.modal.style.transform = 'translate(0)';
   }
 
-  initialX = 0;
-  moveX = 0;
-  finalX = 0;
+  vars.initialX = 0;
+  vars.moveX = 0;
+  vars.finalX = 0;
 }
 
 function finishSwipe(swiped) {
-  modal.remove();
+  elements.modal.remove();
   var newModal = document.createElement('DIV');
   var newItemBody = document.createElement('DIV');
   newModal.id = 'modal';
   newItemBody.id = 'itemBody';
   newModal.classList.add('showHide');
   document.body.appendChild(newModal);
-  modal = document.querySelector('#modal');
-  modal.appendChild(newItemBody);
-  itemBody = document.querySelector('#itemBody');
-  viewer = [overlay, modal, exit];
+  elements.modal = document.querySelector('#modal');
+  elements.modal.appendChild(newItemBody);
+  elements.itemBody = document.querySelector('#itemBody');
+  viewer = [elements.overlay, elements.modal, elements.exit];
 
   if (swiped === 'left') {
-    modal.style.transform = 'translate(' + window.innerWidth + 'px) scale(0.5)';
+    elements.modal.style.transform = 'translate(' + window.innerWidth + 'px) scale(0.5)';
     next();
   } else {
-    modal.style.transform = 'translate(-' + window.innerWidth + 'px) scale(0.5)';
+    elements.modal.style.transform = 'translate(-' + window.innerWidth + 'px) scale(0.5)';
     prev();
   }
 
   setTimeout(function () {
-    return modal.style.transform = 'translate(0) scale(1)';
+    return elements.modal.style.transform = 'translate(0) scale(1)';
   }, 100);
-  modal.addEventListener('touchstart', startTouch, false);
-  modal.addEventListener('touchmove', moveTouch, false);
-  modal.addEventListener('touchend', endTouch, false);
+  elements.modal.addEventListener('touchstart', startTouch, false);
+  elements.modal.addEventListener('touchmove', moveTouch, false);
+  elements.modal.addEventListener('touchend', endTouch, false);
 } // LISTENERS
 
 
-navButton.addEventListener('click', function () {
-  navItems.classList.toggle('showHide');
+elements.navButton.addEventListener('click', function () {
+  elements.navItems.classList.toggle('showHide');
 });
-sections.forEach(function (section, i) {
+elements.sections.forEach(function (section, i) {
   section.addEventListener('click', function () {
     showSection(i);
+    console.log('click');
   });
   section.addEventListener('keyup', function (e) {
     if (e.key === 'Enter') showSection(i);
@@ -164,7 +169,7 @@ sections.forEach(function (section, i) {
 document.addEventListener('keyup', function (event) {
   event.preventDefault();
 
-  if (modal.classList.contains('showHide')) {
+  if (elements.modal.classList.contains('showHide')) {
     switch (event.key) {
       case 'Left':
       case 'ArrowLeft':
@@ -184,13 +189,13 @@ document.addEventListener('keyup', function (event) {
 document.addEventListener('keyup', function (e) {
   if (e.key === 'Escape') hideSection();
 });
-overlay.addEventListener('click', function () {
+elements.overlay.addEventListener('click', function () {
   hideSection();
 });
-exit.addEventListener('click', function () {
+elements.exit.addEventListener('click', function () {
   hideSection();
 });
-modal.addEventListener('touchstart', startTouch, false);
-modal.addEventListener('touchmove', moveTouch, false);
-modal.addEventListener('touchend', endTouch, false);
+elements.modal.addEventListener('touchstart', startTouch, false);
+elements.modal.addEventListener('touchmove', moveTouch, false);
+elements.modal.addEventListener('touchend', endTouch, false);
 //# sourceMappingURL=app.js.map

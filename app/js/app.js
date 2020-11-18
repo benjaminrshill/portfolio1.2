@@ -58,25 +58,32 @@ const items = [
         }
     ]
 ];
-const navButton = document.querySelector('nav button');
-const navItems = document.querySelector('nav > div');
-const sections = Array.from(document.querySelectorAll('section'));
-const overlay = document.querySelector('#overlay');
-const exit = document.querySelector('#exit');
-let modal = document.querySelector('#modal');
-let itemBody = document.querySelector('#itemBody');
-let viewer = [overlay, modal, exit];
-let q = sections.length - 1;
-let p = 0;
-let initialX = 0;
-let moveX = 0;
-let finalX = 0;
+
+let elements = {
+    navButton: document.querySelector('nav button'),
+    navItems: document.querySelector('nav > div'),
+    sections: Array.from(document.querySelectorAll('section')),
+    overlay: document.querySelector('#overlay'),
+    exit: document.querySelector('#exit'),
+    modal: document.querySelector('#modal'),
+    itemBody: document.querySelector('#itemBody'),
+}
+
+let viewer = [elements.overlay, elements.modal, elements.exit];
+
+let vars = {
+    q: elements.sections.length - 1,
+    p: 0,
+    initialX: 0,
+    moveX: 0,
+    finalX: 0
+}
 
 
 // FUNCTIONS
 
 function showSection(i) {
-    p = i;
+    vars.p = i;
     viewer.forEach(item => item.classList.add('showHide'));
     switchContent(i);
     focusLink();
@@ -84,18 +91,18 @@ function showSection(i) {
 
 function hideSection() {
     viewer.forEach(item => item.classList.remove('showHide'));
-    sections[p].querySelector('h3').focus();
+    elements.sections[vars.p].querySelector('h3').focus();
 }
 
 function prev() {
-    p > 0 ? p-- : p = q;
-    switchContent(p);
+    vars.p > 0 ? vars.p-- : vars.p = vars.q;
+    switchContent(vars.p);
     focusLink();
 }
 
 function next() {
-    p < q ? p++ : p = 0;
-    switchContent(p);
+    vars.p < vars.q ? vars.p++ : vars.p = 0;
+    switchContent(vars.p);
     focusLink();
 }
 
@@ -103,7 +110,7 @@ function switchContent(i) {
     let cleanUrl = items[i][0].link.replace(/^https*:\/\//, '');
     let pDesc = items[i][0].desc.replace(/\n/g, '</p><p>');
     let tabIndex = (i+3);
-    itemBody.innerHTML =
+    elements.itemBody.innerHTML =
         '<h4>'
         + items[i][0].title
         + '</h4><a tabindex="'
@@ -119,72 +126,73 @@ function switchContent(i) {
 
 function focusLink() {
     setTimeout(() => {
-        itemBody.querySelector('a').focus();
+        elements.itemBody.querySelector('a').focus();
     }, 100);
 }
 
 function startTouch(e) {
-    initialX = e.touches[0].clientX;
+    vars.initialX = e.touches[0].clientX;
 }
 function moveTouch(e) {
     e.preventDefault();
-    if (initialX === 0) return;
-    moveX = e.touches[0].clientX;
-    finalX = initialX - moveX;
-    modal.style.transform = 'translate(' + (0 - finalX) + 'px)';
+    if (vars.initialX === 0) return;
+    vars.moveX = e.touches[0].clientX;
+    vars.finalX = vars.initialX - vars.moveX;
+    elements.modal.style.transform = 'translate(' + (0 - vars.finalX) + 'px)';
 }
 
 function endTouch() {
     let screenWidth = window.innerWidth;
-    if (finalX > 100) {
-        modal.style.transform = 'translate(-' + screenWidth + 'px) scale(0.5)';
+    if (vars.finalX > 100) {
+        elements.modal.style.transform = 'translate(-' + screenWidth + 'px) scale(0.5)';
         setTimeout(() => finishSwipe('left'), 300);
-    } else if (finalX < -100) {
-        modal.style.transform = 'translate(' + screenWidth + 'px) scale(0.5)';
+    } else if (vars.finalX < -100) {
+        elements.modal.style.transform = 'translate(' + screenWidth + 'px) scale(0.5)';
         setTimeout(() => finishSwipe('right'), 300);
     } else {
-        modal.style.transform = 'translate(0)';
+        elements.modal.style.transform = 'translate(0)';
     }
-    initialX = 0;
-    moveX = 0;
-    finalX = 0;
+    vars.initialX = 0;
+    vars.moveX = 0;
+    vars.finalX = 0;
 }
 
 function finishSwipe(swiped) {
-    modal.remove();
+    elements.modal.remove();
     let newModal = document.createElement('DIV');
     let newItemBody = document.createElement('DIV');
     newModal.id = 'modal';
     newItemBody.id = 'itemBody';
     newModal.classList.add('showHide');
     document.body.appendChild(newModal);
-    modal = document.querySelector('#modal');
-    modal.appendChild(newItemBody);
-    itemBody = document.querySelector('#itemBody');
-    viewer = [overlay, modal, exit];
+    elements.modal = document.querySelector('#modal');
+    elements.modal.appendChild(newItemBody);
+    elements.itemBody = document.querySelector('#itemBody');
+    viewer = [elements.overlay, elements.modal, elements.exit];
     if (swiped === 'left') {
-        modal.style.transform = 'translate(' + window.innerWidth + 'px) scale(0.5)';
+        elements.modal.style.transform = 'translate(' + window.innerWidth + 'px) scale(0.5)';
         next();
     } else {
-        modal.style.transform =  'translate(-' + window.innerWidth + 'px) scale(0.5)';
+        elements.modal.style.transform =  'translate(-' + window.innerWidth + 'px) scale(0.5)';
         prev();
     }
-    setTimeout(() => modal.style.transform = 'translate(0) scale(1)', 100);
-    modal.addEventListener('touchstart', startTouch, false);
-    modal.addEventListener('touchmove', moveTouch, false);
-    modal.addEventListener('touchend', endTouch, false);
+    setTimeout(() => elements.modal.style.transform = 'translate(0) scale(1)', 100);
+    elements.modal.addEventListener('touchstart', startTouch, false);
+    elements.modal.addEventListener('touchmove', moveTouch, false);
+    elements.modal.addEventListener('touchend', endTouch, false);
 }
 
 
 // LISTENERS
 
-navButton.addEventListener('click', function() {
-    navItems.classList.toggle('showHide');
+elements.navButton.addEventListener('click', function() {
+    elements.navItems.classList.toggle('showHide');
 });
 
-sections.forEach((section, i) => {
+elements.sections.forEach((section, i) => {
     section.addEventListener('click', function () {
         showSection(i);
+        console.log('click');
     });
     section.addEventListener('keyup', function (e) {
         if (e.key === 'Enter') showSection(i);
@@ -193,7 +201,7 @@ sections.forEach((section, i) => {
 
 document.addEventListener('keyup', function (event) {
     event.preventDefault();
-    if (modal.classList.contains('showHide')) {
+    if (elements.modal.classList.contains('showHide')) {
         switch (event.key) {
             case 'Left':
             case 'ArrowLeft':
@@ -213,14 +221,14 @@ document.addEventListener('keyup', function(e) {
     if (e.key === 'Escape') hideSection();
 });
 
-overlay.addEventListener('click', function () {
+elements.overlay.addEventListener('click', function () {
     hideSection();
 });
 
-exit.addEventListener('click', function () {
+elements.exit.addEventListener('click', function () {
     hideSection();
 });
 
-modal.addEventListener('touchstart', startTouch, false);
-modal.addEventListener('touchmove', moveTouch, false);
-modal.addEventListener('touchend', endTouch, false);
+elements.modal.addEventListener('touchstart', startTouch, false);
+elements.modal.addEventListener('touchmove', moveTouch, false);
+elements.modal.addEventListener('touchend', endTouch, false);
