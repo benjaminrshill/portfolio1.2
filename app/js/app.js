@@ -63,10 +63,10 @@ const navButton = document.querySelector('nav button');
 const navItems = document.querySelector('nav > div');
 const sections = Array.from(document.querySelectorAll('section'));
 const overlay = document.querySelector('#overlay');
-const modal = document.querySelector('#modal');
-const itemBody = document.querySelector('#itemBody');
-const q = sections.length - 1;
 
+let modal = document.querySelector('#modal');
+let itemBody = document.querySelector('#itemBody');
+let q = sections.length - 1;
 let p = 0;
 
 navButton.addEventListener('click', function() {
@@ -163,7 +163,6 @@ let initialX = null;
 let moveX = null;
 let finalX = null;
 
-
 function startTouch(e) {
     initialX = e.touches[0].clientX;
 }
@@ -171,28 +170,55 @@ function startTouch(e) {
 function moveTouch(e) {
     e.preventDefault();
     if (initialX === null) return;
+    modal.style.transform = 'translate(' + e.touches[0].clientX + 'px)';
     moveX = e.touches[0].clientX;
-    modal.style.transform = "translate(" + moveX + "px)";
-
-    // create var for screen width
-    // map touchmove px to translateX (and scale?)
-    // when hits screen width +40% left/right, change ID, fade out/make small, remove element
-    // create new element ID: modal on opposite side (scale 0.1), add innerHTML
-    // move to center (scale 1)
 }
 
 function endTouch() {
     let screenWidth = window.innerWidth;
     finalX = initialX - moveX;
 
-    if (Math.abs(finalX) > screenWidth / 2) { modal.style.transform = "translate(50px)"; }
-    else { modal.style.transform = "translate(0)"; }
+    if (Math.abs(finalX) > screenWidth / 2) {
+        if (finalX > screenWidth / 2) {
+            modal.style.transform = 'translate(-' + screenWidth + 'px) scale(0.5)';
+            setTimeout(() => finishSwipe('left'), 300);
+        } else if (finalX < (0 - screenWidth) / 2) {
+            modal.style.transform = 'translate(' + screenWidth + 'px) scale(0.5)';
+            setTimeout(() => finishSwipe('right'), 300);
+        }
+    } else {
+        modal.style.transform = 'translate(0)';
+    }
 
     initialX = null;
     moveX = null;
     finalX = null;
 }
 
-modal.addEventListener("touchstart", startTouch, false);
-modal.addEventListener("touchmove", moveTouch, false);
-modal.addEventListener("touchend", endTouch, false);
+function finishSwipe(swiped) {
+    modal.remove();
+    let newModal = document.createElement('DIV');
+    let newItemBody = document.createElement('DIV');
+    newModal.id = 'modal';
+    newItemBody.id = 'itemBody';
+    newModal.classList.add('showHide');
+    document.body.appendChild(newModal);
+    modal = document.querySelector('#modal');
+    modal.appendChild(newItemBody);
+    itemBody = document.querySelector('#itemBody');
+    if (swiped === 'left') {
+        modal.style.transform = 'translate(' + window.innerWidth + 'px) scale(0.5)';
+        next();
+    } else {
+        modal.style.transform =  'translate(-' + window.innerWidth + 'px) scale(0.5)';
+        prev();
+    }
+    setTimeout(() => modal.style.transform = 'translate(0) scale(1)', 10);
+    modal.addEventListener('touchstart', startTouch, false);
+    modal.addEventListener('touchmove', moveTouch, false);
+    modal.addEventListener('touchend', endTouch, false);
+}
+
+modal.addEventListener('touchstart', startTouch, false);
+modal.addEventListener('touchmove', moveTouch, false);
+modal.addEventListener('touchend', endTouch, false);

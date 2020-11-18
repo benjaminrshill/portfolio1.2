@@ -127,12 +127,8 @@ function startTouch(e) {
 function moveTouch(e) {
   e.preventDefault();
   if (initialX === null) return;
+  modal.style.transform = 'translate(' + e.touches[0].clientX + 'px)';
   moveX = e.touches[0].clientX;
-  modal.style.transform = "translate(" + moveX + "px)"; // create var for screen width
-  // map touchmove px to translateX (and scale?)
-  // when hits screen width +40% left/right, change ID, fade out/make small, remove element
-  // create new element ID: modal on opposite side (scale 0.1), add innerHTML
-  // move to center (scale 1)
 }
 
 function endTouch() {
@@ -140,9 +136,19 @@ function endTouch() {
   finalX = initialX - moveX;
 
   if (Math.abs(finalX) > screenWidth / 2) {
-    modal.style.transform = "translate(50px)";
+    if (finalX > screenWidth / 2) {
+      modal.style.transform = 'translate(-' + screenWidth + 'px) scale(0.5)';
+      setTimeout(function () {
+        return finishSwipe('left');
+      }, 300);
+    } else if (finalX < (0 - screenWidth) / 2) {
+      modal.style.transform = 'translate(' + screenWidth + 'px) scale(0.5)';
+      setTimeout(function () {
+        return finishSwipe('right');
+      }, 300);
+    }
   } else {
-    modal.style.transform = "translate(0)";
+    modal.style.transform = 'translate(0)';
   }
 
   initialX = null;
@@ -150,7 +156,35 @@ function endTouch() {
   finalX = null;
 }
 
-modal.addEventListener("touchstart", startTouch, false);
-modal.addEventListener("touchmove", moveTouch, false);
-modal.addEventListener("touchend", endTouch, false);
+function finishSwipe(swiped) {
+  modal.remove();
+  var newModal = document.createElement('DIV');
+  var newItemBody = document.createElement('DIV');
+  newModal.id = 'modal';
+  newItemBody.id = 'itemBody';
+  newModal.classList.add('showHide');
+  document.body.appendChild(newModal);
+  modal = document.querySelector('#modal');
+  modal.appendChild(newItemBody);
+  itemBody = document.querySelector('#itemBody');
+
+  if (swiped === 'left') {
+    modal.style.transform = 'translate(' + window.innerWidth + 'px) scale(0.5)';
+    next();
+  } else {
+    modal.style.transform = 'translate(-' + window.innerWidth + 'px) scale(0.5)';
+    prev();
+  }
+
+  setTimeout(function () {
+    return modal.style.transform = 'translate(0) scale(1)';
+  }, 10);
+  modal.addEventListener('touchstart', startTouch, false);
+  modal.addEventListener('touchmove', moveTouch, false);
+  modal.addEventListener('touchend', endTouch, false);
+}
+
+modal.addEventListener('touchstart', startTouch, false);
+modal.addEventListener('touchmove', moveTouch, false);
+modal.addEventListener('touchend', endTouch, false);
 //# sourceMappingURL=app.js.map
