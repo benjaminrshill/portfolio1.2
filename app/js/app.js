@@ -174,3 +174,11 @@ overlay.addEventListener('click', function () {
 
 modal.addEventListener("touchstart", startTouch, false);
 modal.addEventListener("touchmove", moveTouch, false);
+
+function dragLeftRight() {
+    // create var for screen width
+    // map touchmove px to translateX (and scale?)
+    // when hits screen width +40% left/right, change ID, fade out/make small, remove element
+    // create new element ID: modal on opposite side (scale 0.1), add innerHTML
+    // move to center (scale 1)
+}
