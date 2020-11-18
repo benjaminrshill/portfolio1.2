@@ -41,9 +41,9 @@ var itemBody = document.querySelector('#itemBody');
 var viewer = [overlay, modal, exit];
 var q = sections.length - 1;
 var p = 0;
-navButton.addEventListener('click', function () {
-  navItems.classList.toggle('showHide');
-});
+var initialX = 0;
+var moveX = 0;
+var finalX = 0; // FUNCTIONS
 
 function showSection(i) {
   p = i;
@@ -85,47 +85,6 @@ function focusLink() {
     itemBody.querySelector('a').focus();
   }, 100);
 }
-
-sections.forEach(function (section, i) {
-  section.addEventListener('click', function () {
-    showSection(i);
-  });
-  section.addEventListener('keyup', function (e) {
-    e.key === 'Enter' ? showSection(i) : null;
-  });
-});
-document.addEventListener('keyup', function (event) {
-  event.preventDefault();
-
-  if (modal.classList.contains('showHide')) {
-    switch (event.key) {
-      case 'Left':
-      case 'ArrowLeft':
-        prev();
-        break;
-
-      case 'Right':
-      case 'ArrowRight':
-        next();
-        break;
-
-      default:
-        return;
-    }
-  }
-});
-document.addEventListener('keyup', function (e) {
-  e.key === 'Escape' ? hideSection() : null;
-});
-overlay.addEventListener('click', function () {
-  hideSection();
-});
-exit.addEventListener('click', function () {
-  hideSection();
-});
-var initialX = 0;
-var moveX = 0;
-var finalX = 0;
 
 function startTouch(e) {
   initialX = e.touches[0].clientX;
@@ -184,12 +143,53 @@ function finishSwipe(swiped) {
 
   setTimeout(function () {
     return modal.style.transform = 'translate(0) scale(1)';
-  }, 10);
+  }, 100);
   modal.addEventListener('touchstart', startTouch, false);
   modal.addEventListener('touchmove', moveTouch, false);
   modal.addEventListener('touchend', endTouch, false);
-}
+} // LISTENERS
 
+
+navButton.addEventListener('click', function () {
+  navItems.classList.toggle('showHide');
+});
+sections.forEach(function (section, i) {
+  section.addEventListener('click', function () {
+    showSection(i);
+  });
+  section.addEventListener('keyup', function (e) {
+    if (e.key === 'Enter') showSection(i);
+  });
+});
+document.addEventListener('keyup', function (event) {
+  event.preventDefault();
+
+  if (modal.classList.contains('showHide')) {
+    switch (event.key) {
+      case 'Left':
+      case 'ArrowLeft':
+        prev();
+        break;
+
+      case 'Right':
+      case 'ArrowRight':
+        next();
+        break;
+
+      default:
+        return;
+    }
+  }
+});
+document.addEventListener('keyup', function (e) {
+  if (e.key === 'Escape') hideSection();
+});
+overlay.addEventListener('click', function () {
+  hideSection();
+});
+exit.addEventListener('click', function () {
+  hideSection();
+});
 modal.addEventListener('touchstart', startTouch, false);
 modal.addEventListener('touchmove', moveTouch, false);
 modal.addEventListener('touchend', endTouch, false);

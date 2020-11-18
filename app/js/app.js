@@ -58,7 +58,6 @@ const items = [
         }
     ]
 ];
-
 const navButton = document.querySelector('nav button');
 const navItems = document.querySelector('nav > div');
 const sections = Array.from(document.querySelectorAll('section'));
@@ -69,10 +68,12 @@ let itemBody = document.querySelector('#itemBody');
 let viewer = [overlay, modal, exit];
 let q = sections.length - 1;
 let p = 0;
+let initialX = 0;
+let moveX = 0;
+let finalX = 0;
 
-navButton.addEventListener('click', function() {
-    navItems.classList.toggle('showHide');
-});
+
+// FUNCTIONS
 
 function showSection(i) {
     p = i;
@@ -122,50 +123,6 @@ function focusLink() {
     }, 100);
 }
 
-sections.forEach((section, i) => {
-    section.addEventListener('click', function () {
-        showSection(i);
-    });
-    section.addEventListener('keyup', function (e) {
-        e.key === 'Enter' ? showSection(i) : null;
-    });
-});
-
-document.addEventListener('keyup', function (event) {
-    event.preventDefault();
-    if (modal.classList.contains('showHide')) {
-        switch (event.key) {
-            case 'Left':
-            case 'ArrowLeft':
-                prev();
-                break;
-            case 'Right':
-            case 'ArrowRight':
-                next();
-                break;
-            default:
-                return;
-        }
-    }
-});
-
-document.addEventListener('keyup', function(e) {
-    e.key === 'Escape' ? hideSection() : null;
-});
-
-overlay.addEventListener('click', function () {
-    hideSection();
-});
-
-exit.addEventListener('click', function () {
-    hideSection();
-});
-
-
-let initialX = 0;
-let moveX = 0;
-let finalX = 0;
-
 function startTouch(e) {
     initialX = e.touches[0].clientX;
 }
@@ -179,7 +136,6 @@ function moveTouch(e) {
 
 function endTouch() {
     let screenWidth = window.innerWidth;
-
     if (finalX > 100) {
         modal.style.transform = 'translate(-' + screenWidth + 'px) scale(0.5)';
         setTimeout(() => finishSwipe('left'), 300);
@@ -189,7 +145,6 @@ function endTouch() {
     } else {
         modal.style.transform = 'translate(0)';
     }
-
     initialX = 0;
     moveX = 0;
     finalX = 0;
@@ -214,11 +169,57 @@ function finishSwipe(swiped) {
         modal.style.transform =  'translate(-' + window.innerWidth + 'px) scale(0.5)';
         prev();
     }
-    setTimeout(() => modal.style.transform = 'translate(0) scale(1)', 10);
+    setTimeout(() => modal.style.transform = 'translate(0) scale(1)', 100);
     modal.addEventListener('touchstart', startTouch, false);
     modal.addEventListener('touchmove', moveTouch, false);
     modal.addEventListener('touchend', endTouch, false);
 }
+
+
+// LISTENERS
+
+navButton.addEventListener('click', function() {
+    navItems.classList.toggle('showHide');
+});
+
+sections.forEach((section, i) => {
+    section.addEventListener('click', function () {
+        showSection(i);
+    });
+    section.addEventListener('keyup', function (e) {
+        if (e.key === 'Enter') showSection(i);
+    });
+});
+
+document.addEventListener('keyup', function (event) {
+    event.preventDefault();
+    if (modal.classList.contains('showHide')) {
+        switch (event.key) {
+            case 'Left':
+            case 'ArrowLeft':
+                prev();
+                break;
+            case 'Right':
+            case 'ArrowRight':
+                next();
+                break;
+            default:
+                return;
+        }
+    }
+});
+
+document.addEventListener('keyup', function(e) {
+    if (e.key === 'Escape') hideSection();
+});
+
+overlay.addEventListener('click', function () {
+    hideSection();
+});
+
+exit.addEventListener('click', function () {
+    hideSection();
+});
 
 modal.addEventListener('touchstart', startTouch, false);
 modal.addEventListener('touchmove', moveTouch, false);
