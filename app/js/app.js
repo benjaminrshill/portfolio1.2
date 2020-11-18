@@ -170,10 +170,10 @@ function finishSwipe(swiped) {
     elements.itemBody = document.querySelector('#itemBody');
     viewer = [elements.overlay, elements.modal, elements.exit];
     if (swiped === 'left') {
-        elements.modal.style.transform = 'translate(-' + window.innerWidth + 'px) scale(0.5)';
+        elements.modal.style.transform = 'translate(' + window.innerWidth + 'px) scale(0.5)';
         next();
     } else {
-        elements.modal.style.transform =  'translate(' + window.innerWidth + 'px) scale(0.5)';
+        elements.modal.style.transform =  'translate(-' + window.innerWidth + 'px) scale(0.5)';
         prev();
     }
     setTimeout(() => elements.modal.style.transform = 'translate(0) scale(1)', 100);
