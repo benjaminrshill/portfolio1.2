@@ -39,7 +39,6 @@ var modal = document.querySelector('#modal');
 var itemBody = document.querySelector('#itemBody');
 var q = sections.length - 1;
 var p = 0;
-var initialX = null;
 navButton.addEventListener('click', function () {
   navItems.classList.toggle('showHide');
 });
@@ -83,19 +82,6 @@ function focusLink() {
   }, 100);
 }
 
-function startTouch(e) {
-  initialX = e.touches[0].clientX;
-}
-
-function moveTouch(e) {
-  e.preventDefault();
-  if (initialX === null) return;
-  var currentX = e.touches[0].clientX;
-  var diffX = initialX - currentX;
-  diffX > 0 ? next() : prev();
-  initialX = null;
-}
-
 sections.forEach(function (section, i) {
   section.addEventListener('click', function () {
     showSection(i);
@@ -130,13 +116,41 @@ document.addEventListener('keyup', function (e) {
 overlay.addEventListener('click', function () {
   hideSection();
 });
-modal.addEventListener("touchstart", startTouch, false);
-modal.addEventListener("touchmove", moveTouch, false);
+var initialX = null;
+var moveX = null;
+var finalX = null;
 
-function dragLeftRight() {// create var for screen width
+function startTouch(e) {
+  initialX = e.touches[0].clientX;
+}
+
+function moveTouch(e) {
+  e.preventDefault();
+  if (initialX === null) return;
+  moveX = e.touches[0].clientX;
+  modal.style.transform = "translate(" + moveX + "px)"; // create var for screen width
   // map touchmove px to translateX (and scale?)
   // when hits screen width +40% left/right, change ID, fade out/make small, remove element
   // create new element ID: modal on opposite side (scale 0.1), add innerHTML
   // move to center (scale 1)
 }
+
+function endTouch() {
+  var screenWidth = window.innerWidth;
+  finalX = initialX - moveX;
+
+  if (Math.abs(finalX) > screenWidth / 2) {
+    modal.style.transform = "translate(50px)";
+  } else {
+    modal.style.transform = "translate(0)";
+  }
+
+  initialX = null;
+  moveX = null;
+  finalX = null;
+}
+
+modal.addEventListener("touchstart", startTouch, false);
+modal.addEventListener("touchmove", moveTouch, false);
+modal.addEventListener("touchend", endTouch, false);
 //# sourceMappingURL=app.js.map

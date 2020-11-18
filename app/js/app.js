@@ -68,7 +68,6 @@ const itemBody = document.querySelector('#itemBody');
 const q = sections.length - 1;
 
 let p = 0;
-let initialX = null;
 
 navButton.addEventListener('click', function() {
     navItems.classList.toggle('showHide');
@@ -124,19 +123,6 @@ function focusLink() {
     }, 100);
 }
 
-function startTouch(e) {
-    initialX = e.touches[0].clientX;
-}
-
-function moveTouch(e) {
-    e.preventDefault();
-    if (initialX === null) return;
-    let currentX = e.touches[0].clientX;
-    let diffX = initialX - currentX;
-    diffX > 0 ? next() : prev();
-    initialX = null;
-}
-
 sections.forEach((section, i) => {
     section.addEventListener('click', function () {
         showSection(i);
@@ -172,13 +158,41 @@ overlay.addEventListener('click', function () {
     hideSection();
 });
 
-modal.addEventListener("touchstart", startTouch, false);
-modal.addEventListener("touchmove", moveTouch, false);
 
-function dragLeftRight() {
+let initialX = null;
+let moveX = null;
+let finalX = null;
+
+
+function startTouch(e) {
+    initialX = e.touches[0].clientX;
+}
+
+function moveTouch(e) {
+    e.preventDefault();
+    if (initialX === null) return;
+    moveX = e.touches[0].clientX;
+    modal.style.transform = "translate(" + moveX + "px)";
+
     // create var for screen width
     // map touchmove px to translateX (and scale?)
     // when hits screen width +40% left/right, change ID, fade out/make small, remove element
     // create new element ID: modal on opposite side (scale 0.1), add innerHTML
     // move to center (scale 1)
 }
+
+function endTouch() {
+    let screenWidth = window.innerWidth;
+    finalX = initialX - moveX;
+
+    if (Math.abs(finalX) > screenWidth / 2) { modal.style.transform = "translate(50px)"; }
+    else { modal.style.transform = "translate(0)"; }
+
+    initialX = null;
+    moveX = null;
+    finalX = null;
+}
+
+modal.addEventListener("touchstart", startTouch, false);
+modal.addEventListener("touchmove", moveTouch, false);
+modal.addEventListener("touchend", endTouch, false);
