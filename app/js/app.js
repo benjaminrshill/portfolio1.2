@@ -63,9 +63,10 @@ const navButton = document.querySelector('nav button');
 const navItems = document.querySelector('nav > div');
 const sections = Array.from(document.querySelectorAll('section'));
 const overlay = document.querySelector('#overlay');
-
+const exit = document.querySelector('#exit');
 let modal = document.querySelector('#modal');
 let itemBody = document.querySelector('#itemBody');
+let viewer = [overlay, modal, exit];
 let q = sections.length - 1;
 let p = 0;
 
@@ -75,15 +76,13 @@ navButton.addEventListener('click', function() {
 
 function showSection(i) {
     p = i;
-    overlay.classList.add('showHide');
-    modal.classList.add('showHide');
+    viewer.forEach(item => item.classList.add('showHide'));
     switchContent(i);
     focusLink();
 }
 
 function hideSection() {
-    overlay.classList.remove('showHide');
-    modal.classList.remove('showHide');
+    viewer.forEach(item => item.classList.remove('showHide'));
     sections[p].querySelector('h3').focus();
 }
 
@@ -158,41 +157,42 @@ overlay.addEventListener('click', function () {
     hideSection();
 });
 
+exit.addEventListener('click', function () {
+    hideSection();
+});
 
-let initialX = null;
-let moveX = null;
-let finalX = null;
+
+let initialX = 0;
+let moveX = 0;
+let finalX = 0;
 
 function startTouch(e) {
     initialX = e.touches[0].clientX;
 }
-
 function moveTouch(e) {
     e.preventDefault();
-    if (initialX === null) return;
-    modal.style.transform = 'translate(' + e.touches[0].clientX + 'px)';
+    if (initialX === 0) return;
     moveX = e.touches[0].clientX;
+    finalX = initialX - moveX;
+    modal.style.transform = 'translate(' + (0 - finalX) + 'px)';
 }
 
 function endTouch() {
     let screenWidth = window.innerWidth;
-    finalX = initialX - moveX;
 
-    if (Math.abs(finalX) > screenWidth / 2) {
-        if (finalX > screenWidth / 2) {
-            modal.style.transform = 'translate(-' + screenWidth + 'px) scale(0.5)';
-            setTimeout(() => finishSwipe('left'), 300);
-        } else if (finalX < (0 - screenWidth) / 2) {
-            modal.style.transform = 'translate(' + screenWidth + 'px) scale(0.5)';
-            setTimeout(() => finishSwipe('right'), 300);
-        }
+    if (finalX > 100) {
+        modal.style.transform = 'translate(-' + screenWidth + 'px) scale(0.5)';
+        setTimeout(() => finishSwipe('left'), 300);
+    } else if (finalX < -100) {
+        modal.style.transform = 'translate(' + screenWidth + 'px) scale(0.5)';
+        setTimeout(() => finishSwipe('right'), 300);
     } else {
         modal.style.transform = 'translate(0)';
     }
 
-    initialX = null;
-    moveX = null;
-    finalX = null;
+    initialX = 0;
+    moveX = 0;
+    finalX = 0;
 }
 
 function finishSwipe(swiped) {
@@ -206,6 +206,7 @@ function finishSwipe(swiped) {
     modal = document.querySelector('#modal');
     modal.appendChild(newItemBody);
     itemBody = document.querySelector('#itemBody');
+    viewer = [overlay, modal, exit];
     if (swiped === 'left') {
         modal.style.transform = 'translate(' + window.innerWidth + 'px) scale(0.5)';
         next();

@@ -35,8 +35,10 @@ var navButton = document.querySelector('nav button');
 var navItems = document.querySelector('nav > div');
 var sections = Array.from(document.querySelectorAll('section'));
 var overlay = document.querySelector('#overlay');
+var exit = document.querySelector('#exit');
 var modal = document.querySelector('#modal');
 var itemBody = document.querySelector('#itemBody');
+var viewer = [overlay, modal, exit];
 var q = sections.length - 1;
 var p = 0;
 navButton.addEventListener('click', function () {
@@ -45,15 +47,17 @@ navButton.addEventListener('click', function () {
 
 function showSection(i) {
   p = i;
-  overlay.classList.add('showHide');
-  modal.classList.add('showHide');
+  viewer.forEach(function (item) {
+    return item.classList.add('showHide');
+  });
   switchContent(i);
   focusLink();
 }
 
 function hideSection() {
-  overlay.classList.remove('showHide');
-  modal.classList.remove('showHide');
+  viewer.forEach(function (item) {
+    return item.classList.remove('showHide');
+  });
   sections[p].querySelector('h3').focus();
 }
 
@@ -116,9 +120,12 @@ document.addEventListener('keyup', function (e) {
 overlay.addEventListener('click', function () {
   hideSection();
 });
-var initialX = null;
-var moveX = null;
-var finalX = null;
+exit.addEventListener('click', function () {
+  hideSection();
+});
+var initialX = 0;
+var moveX = 0;
+var finalX = 0;
 
 function startTouch(e) {
   initialX = e.touches[0].clientX;
@@ -126,34 +133,32 @@ function startTouch(e) {
 
 function moveTouch(e) {
   e.preventDefault();
-  if (initialX === null) return;
-  modal.style.transform = 'translate(' + e.touches[0].clientX + 'px)';
+  if (initialX === 0) return;
   moveX = e.touches[0].clientX;
+  finalX = initialX - moveX;
+  modal.style.transform = 'translate(' + (0 - finalX) + 'px)';
 }
 
 function endTouch() {
   var screenWidth = window.innerWidth;
-  finalX = initialX - moveX;
 
-  if (Math.abs(finalX) > screenWidth / 2) {
-    if (finalX > screenWidth / 2) {
-      modal.style.transform = 'translate(-' + screenWidth + 'px) scale(0.5)';
-      setTimeout(function () {
-        return finishSwipe('left');
-      }, 300);
-    } else if (finalX < (0 - screenWidth) / 2) {
-      modal.style.transform = 'translate(' + screenWidth + 'px) scale(0.5)';
-      setTimeout(function () {
-        return finishSwipe('right');
-      }, 300);
-    }
+  if (finalX > 100) {
+    modal.style.transform = 'translate(-' + screenWidth + 'px) scale(0.5)';
+    setTimeout(function () {
+      return finishSwipe('left');
+    }, 300);
+  } else if (finalX < -100) {
+    modal.style.transform = 'translate(' + screenWidth + 'px) scale(0.5)';
+    setTimeout(function () {
+      return finishSwipe('right');
+    }, 300);
   } else {
     modal.style.transform = 'translate(0)';
   }
 
-  initialX = null;
-  moveX = null;
-  finalX = null;
+  initialX = 0;
+  moveX = 0;
+  finalX = 0;
 }
 
 function finishSwipe(swiped) {
@@ -167,6 +172,7 @@ function finishSwipe(swiped) {
   modal = document.querySelector('#modal');
   modal.appendChild(newItemBody);
   itemBody = document.querySelector('#itemBody');
+  viewer = [overlay, modal, exit];
 
   if (swiped === 'left') {
     modal.style.transform = 'translate(' + window.innerWidth + 'px) scale(0.5)';

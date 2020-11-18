@@ -165,6 +165,7 @@ main {
 #overlay {
   z-index: 49;
   visibility: hidden;
+  opacity: 0;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -172,7 +173,6 @@ main {
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: 0;
   background: #000;
   transition: 0.3s;
   &.showHide {
@@ -184,6 +184,7 @@ main {
 #modal {
   z-index: 50;
   visibility: hidden;
+  opacity: 0;
   display: flex;
   position: fixed;
   width: 95vw;
@@ -196,7 +197,6 @@ main {
   right: 0;
   background: $a-color;
   border: 1px solid $b-color;
-  opacity: 0;
   transition: 0.3s;
   &.showHide {
     visibility: visible;
@@ -227,6 +227,32 @@ main {
       font-family: $b-type;
       font-size: 15px;
     }
+  }
+}
+
+#exit {
+  z-index: 51;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  width: 100vw;
+  height: 50px;
+  max-height: 5vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 1px solid $b-color;
+  text-align: center;
+  color: $c-color;
+  background: #000;
+  &.showHide {
+    visibility: visible;
+    opacity: 1;
+  }
+  &:before {
+    content: '+';
+    display: block;
+    transform: rotate(45deg);
   }
 }
 
