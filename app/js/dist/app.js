@@ -103,15 +103,13 @@ function moveTouch(e) {
 }
 
 function endTouch() {
-  var screenWidth = window.innerWidth;
-
   if (vars.finalX > 100) {
-    elements.modal.style.transform = 'translate(-' + screenWidth + 'px) scale(0.5)';
+    elements.modal.style.transform = 'translate(-' + window.innerWidth + 'px) scale(0.5)';
     setTimeout(function () {
       return finishSwipe('left');
     }, 300);
   } else if (vars.finalX < -100) {
-    elements.modal.style.transform = 'translate(' + screenWidth + 'px) scale(0.5)';
+    elements.modal.style.transform = 'translate(' + window.innerWidth + 'px) scale(0.5)';
     setTimeout(function () {
       return finishSwipe('right');
     }, 300);

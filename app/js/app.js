@@ -142,12 +142,11 @@ function moveTouch(e) {
 }
 
 function endTouch() {
-    let screenWidth = window.innerWidth;
     if (vars.finalX > 100) {
-        elements.modal.style.transform = 'translate(-' + screenWidth + 'px) scale(0.5)';
+        elements.modal.style.transform = 'translate(-' + window.innerWidth + 'px) scale(0.5)';
         setTimeout(() => finishSwipe('left'), 300);
     } else if (vars.finalX < -100) {
-        elements.modal.style.transform = 'translate(' + screenWidth + 'px) scale(0.5)';
+        elements.modal.style.transform = 'translate(' + window.innerWidth + 'px) scale(0.5)';
         setTimeout(() => finishSwipe('right'), 300);
     } else {
         elements.modal.style.transform = 'translate(0)';
