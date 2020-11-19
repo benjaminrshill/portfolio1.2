@@ -158,6 +158,7 @@ function endTouch() {
 
 function finishSwipe(swiped) {
     newModal();
+    elements.modal.style.visibility = 'visible';
     if (swiped === 'left') {
         elements.modal.style.transform = 'translate(' + window.innerWidth + 'px) scale(0.5)';
         next();
@@ -181,6 +182,7 @@ function newModal() {
     document.body.appendChild(newModal);
     elements.modal = document.querySelector('#modal');
     elements.modal.appendChild(newItemBody);
+    elements.modal.style.visibility = 'hidden';
     elements.itemBody = document.querySelector('#itemBody');
     viewer[1] = elements.modal;
 }
