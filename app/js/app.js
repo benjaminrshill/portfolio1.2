@@ -165,7 +165,7 @@ function finishSwipe(swiped) {
         elements.modal.style.transform = 'translate(-' + window.innerWidth + 'px) scale(0.5)';
         prev();
     }
-    elements.modal.style.visibility = 'visible';
+    elements.modal.classList.remove('noShow');
     setTimeout(() => elements.modal.style.transform = 'translate(0) scale(1)', 100);
     elements.modal.addEventListener('touchstart', startTouch, false);
     elements.modal.addEventListener('touchmove', moveTouch, false);
@@ -182,7 +182,7 @@ function newModal() {
     document.body.appendChild(newModal);
     elements.modal = document.querySelector('#modal');
     elements.modal.appendChild(newItemBody);
-    elements.modal.style.visibility = 'hidden';
+    elements.modal.classList.add('noShow');
     elements.itemBody = document.querySelector('#itemBody');
     viewer[1] = elements.modal;
 }

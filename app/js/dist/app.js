@@ -133,7 +133,7 @@ function finishSwipe(swiped) {
     prev();
   }
 
-  elements.modal.style.visibility = 'visible';
+  elements.modal.classList.remove('noShow');
   setTimeout(function () {
     return elements.modal.style.transform = 'translate(0) scale(1)';
   }, 100);
@@ -152,7 +152,7 @@ function newModal() {
   document.body.appendChild(newModal);
   elements.modal = document.querySelector('#modal');
   elements.modal.appendChild(newItemBody);
-  elements.modal.style.visibility = 'hidden';
+  elements.modal.classList.add('noShow');
   elements.itemBody = document.querySelector('#itemBody');
   viewer[1] = elements.modal;
 } // LISTENERS
