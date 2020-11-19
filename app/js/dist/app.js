@@ -124,7 +124,6 @@ function endTouch() {
 
 function finishSwipe(swiped) {
   newModal();
-  elements.modal.style.visibility = 'visible';
 
   if (swiped === 'left') {
     elements.modal.style.transform = 'translate(' + window.innerWidth + 'px) scale(0.5)';
@@ -134,9 +133,10 @@ function finishSwipe(swiped) {
     prev();
   }
 
+  elements.modal.style.visibility = 'visible';
   setTimeout(function () {
     return elements.modal.style.transform = 'translate(0) scale(1)';
-  }, 200);
+  }, 100);
   elements.modal.addEventListener('touchstart', startTouch, false);
   elements.modal.addEventListener('touchmove', moveTouch, false);
   elements.modal.addEventListener('touchend', endTouch, false);
