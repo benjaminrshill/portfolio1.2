@@ -165,7 +165,7 @@ function finishSwipe(swiped) {
         elements.modal.style.transform = 'translate(-' + window.innerWidth + 'px) scale(0.5)';
         prev();
     }
-    elements.modal.classList.remove('noShow');
+    elements.modal.classList.add('showHide');
     setTimeout(() => elements.modal.style.transform = 'translate(0) scale(1)', 100);
     elements.modal.addEventListener('touchstart', startTouch, false);
     elements.modal.addEventListener('touchmove', moveTouch, false);
@@ -178,11 +178,9 @@ function newModal() {
     let newItemBody = document.createElement('DIV');
     newModal.id = 'modal';
     newItemBody.id = 'itemBody';
-    newModal.classList.add('showHide');
     document.body.appendChild(newModal);
     elements.modal = document.querySelector('#modal');
     elements.modal.appendChild(newItemBody);
-    elements.modal.classList.add('noShow');
     elements.itemBody = document.querySelector('#itemBody');
     viewer[1] = elements.modal;
 }

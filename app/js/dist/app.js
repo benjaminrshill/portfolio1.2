@@ -133,7 +133,7 @@ function finishSwipe(swiped) {
     prev();
   }
 
-  elements.modal.classList.remove('noShow');
+  elements.modal.classList.add('showHide');
   setTimeout(function () {
     return elements.modal.style.transform = 'translate(0) scale(1)';
   }, 100);
@@ -148,11 +148,9 @@ function newModal() {
   var newItemBody = document.createElement('DIV');
   newModal.id = 'modal';
   newItemBody.id = 'itemBody';
-  newModal.classList.add('showHide');
   document.body.appendChild(newModal);
   elements.modal = document.querySelector('#modal');
   elements.modal.appendChild(newItemBody);
-  elements.modal.classList.add('noShow');
   elements.itemBody = document.querySelector('#itemBody');
   viewer[1] = elements.modal;
 } // LISTENERS
