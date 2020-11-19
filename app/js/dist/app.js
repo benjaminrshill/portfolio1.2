@@ -125,17 +125,7 @@ function endTouch() {
 }
 
 function finishSwipe(swiped) {
-  elements.modal.remove();
-  var newModal = document.createElement('DIV');
-  var newItemBody = document.createElement('DIV');
-  newModal.id = 'modal';
-  newItemBody.id = 'itemBody';
-  newModal.classList.add('showHide');
-  document.body.appendChild(newModal);
-  elements.modal = document.querySelector('#modal');
-  elements.modal.appendChild(newItemBody);
-  elements.itemBody = document.querySelector('#itemBody');
-  viewer = [elements.overlay, elements.modal, elements.exit];
+  newModal();
 
   if (swiped === 'left') {
     elements.modal.style.transform = 'translate(' + window.innerWidth + 'px) scale(0.5)';
@@ -151,6 +141,20 @@ function finishSwipe(swiped) {
   elements.modal.addEventListener('touchstart', startTouch, false);
   elements.modal.addEventListener('touchmove', moveTouch, false);
   elements.modal.addEventListener('touchend', endTouch, false);
+}
+
+function newModal() {
+  elements.modal.remove();
+  var newModal = document.createElement('DIV');
+  var newItemBody = document.createElement('DIV');
+  newModal.id = 'modal';
+  newItemBody.id = 'itemBody';
+  newModal.classList.add('showHide');
+  document.body.appendChild(newModal);
+  elements.modal = document.querySelector('#modal');
+  elements.modal.appendChild(newItemBody);
+  elements.itemBody = document.querySelector('#itemBody');
+  viewer[1] = elements.modal;
 } // LISTENERS
 
 
@@ -160,7 +164,6 @@ elements.navButton.addEventListener('click', function () {
 elements.sections.forEach(function (section, i) {
   section.addEventListener('click', function () {
     showSection(i);
-    console.log('click');
   });
   section.addEventListener('keyup', function (e) {
     if (e.key === 'Enter') showSection(i);
