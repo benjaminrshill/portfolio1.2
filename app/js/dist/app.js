@@ -133,9 +133,9 @@ function finishSwipe(swiped) {
     prev();
   }
 
-  elements.modal.classList.add('showHide');
   setTimeout(function () {
-    return elements.modal.style.transform = 'translate(0) scale(1)';
+    elements.modal.classList.add('showHide');
+    elements.modal.style.transform = 'translate(0) scale(1)';
   }, 100);
   elements.modal.addEventListener('touchstart', startTouch, false);
   elements.modal.addEventListener('touchmove', moveTouch, false);
