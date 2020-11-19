@@ -135,7 +135,7 @@ function finishSwipe(swiped) {
 
   setTimeout(function () {
     return elements.modal.style.transform = 'translate(0) scale(1)';
-  }, 100);
+  }, 200);
   elements.modal.addEventListener('touchstart', startTouch, false);
   elements.modal.addEventListener('touchmove', moveTouch, false);
   elements.modal.addEventListener('touchend', endTouch, false);

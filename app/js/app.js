@@ -165,7 +165,7 @@ function finishSwipe(swiped) {
         elements.modal.style.transform =  'translate(-' + window.innerWidth + 'px) scale(0.5)';
         prev();
     }
-    setTimeout(() => elements.modal.style.transform = 'translate(0) scale(1)', 100);
+    setTimeout(() => elements.modal.style.transform = 'translate(0) scale(1)', 200);
     elements.modal.addEventListener('touchstart', startTouch, false);
     elements.modal.addEventListener('touchmove', moveTouch, false);
     elements.modal.addEventListener('touchend', endTouch, false);
