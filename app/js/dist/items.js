@@ -1,33 +1,33 @@
 "use strict";
 
 var items = [[{
-  "title": "Item One",
-  "miniDesc": "Mini description",
-  "desc": "Those labours which belong to the various branches of the mathematical sciences, although on first consideration they seem to be the exclusive province of intellect, may, nevertheless, be divided into two distinct sections; one of which may be called the mechanical, because it is subjected to precise and invariable laws, that are capable of being expressed by means of the operations of matter; while the other, demanding the intervention of reasoning, belongs more specially to the domain of the understanding.\n" + "If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right.\n" + "What are you hacking off? Is it my torso?! 'It is!' My precious torso!\n" + "Humans dating robots is sick. You people wonder why I'm still single?\n",
-  "image": "https://images.unsplash.com/photo-1593604977097-8ee5f2fda183?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80",
-  "link": "https://example.com"
+  "title": "My Library",
+  "miniDesc": "Collection app",
+  "desc": "PHP, SQL, CSS, HTML\n" + "My first project using PHP, we were given four days to create a simple collection app, required to retrieve and display a collection of items from a database and be able to add and edit items. Users can also filter and search, sort by title, year, etc, and delete items.\n" + "Though a simple project, not utilising the later object-oriented programming and relevant frameworks that we have since learned, I believe that in context it offers an honest glimpse of my ability to deliver beyond the MVP in a short time.",
+  "image": "./app/images/myLibrary.jpg",
+  "link": "https://github.com/benjaminrshill/myLibrary"
 }], [{
-  "title": "Item Two",
-  "miniDesc": "Mini description",
-  "desc": "This admitted, we may propose to execute, by means of machinery, the mechanical branch of these labours, reserving for pure intellect that which depends on the reasoning faculties. Thus the rigid exactness of those laws which regulate numerical calculations must frequently have suggested the employment of material instruments, either for executing the whole of such calculations or for abridging them; and thence have arisen several inventions having this object in view, but which have in general but partially attained it.\n" + "Me fail English? That's unpossible.\n" + "I'm allergic to bee stings. They cause me to, uh, die. Ahoy hoy? What good is money if it can't inspire terror in your fellow man?\n" + "Dear Mr. President, There are too many states nowadays. Please, eliminate three.\n" + "P.S. I am not a crackpot.",
-  "image": "https://images.unsplash.com/photo-1501696461415-6bd6660c6742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1568&q=80",
-  "link": "http://www.example.com"
-}], [{
-  "title": "Item Three",
-  "miniDesc": "Mini description",
-  "desc": "And now I'm a fish called \"Father\" With gills type dizzy, Blowing liquid lullabies through the spine of time, I'm\n" + "Certain of Saturn's rivers, and all else is fact, So baptize me in the stars And wrap me in nighttime, moon blue\n" + "Pupil my sight with orange balls of light And echo my plight Through the corridors of metaphor\n" + "What else are we living for, if not to create Fiction and rhyme?\n" + "My purpose is to make my soul Rhyme with my mind over matter",
-  "image": "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1162&q=80",
-  "link": "https://example.com"
-}], [{
-  "title": "Item Four",
-  "miniDesc": "Mini description",
-  "desc": "For instance, the much-admired machine of Pascal is now simply an object of curiosity, which, whilst it displays the powerful intellect of its inventor, is yet of little utility in itself. Its powers extended no further than the execution of the first four operations of arithmetic, and indeed were in reality confined to that of the first two, since multiplication and division were the result of a series of additions and subtractions. The chief drawback hitherto on most of such machines is, that they require the continual intervention of a human agent to regulate their movements, and thence arises a source of errors; so that, if their use has not become general for large numerical calculations, it is because they have not in fact resolved the double problem which the question presents, that of correctness in the results, united with economy of time.",
+  "title": "iO Portal",
+  "miniDesc": "Legacy project",
+  "desc": "Slim (PHP), JavaScript, Bootstrap\n" + "Continuing a legacy project using the Slim framework, our class worked on a few stories which increased functionality on various parts of the portal and added two new sections.\n" + "My main work, alongside two classmates, was adding a ‘courses’ and ‘add courses’ section to the portal, which included creating routes, controllers, models, entities, and view helpers in Slim, and some JavaScript to intercept default PHP post behaviour and validate user input. Also unit testing.",
   "image": "https://images.unsplash.com/photo-1536226957245-c83ec577a82e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-  "link": "https://www.example.com"
+  "link": "https://github.com/Mayden-Academy/AcademyPortal/"
+}], [{
+  "title": "IMAJE",
+  "miniDesc": "React experiment",
+  "desc": "React, HTML\n" + "Before attending iO Academy, I spent some time learning JavaScript at home.\n" + "The decision to dive into React at this stage was fairly misguided, as I did not have the required knowledge, but I nonetheless managed to create a basic interactive gallery using React and the HTML5 drag and drop API.\n" + "The app allows a user to drag pre-loaded images from a side container into the gallery (and back), rearrange gallery images, add and delete rows, move rows up and down, and change the size of the gallery and spacing between images. Gallery rows resize based on their content.\n" + "The end goal is a fully customisable image gallery for artists and other creatives to upload and display their work.",
+  "image": "./app/images/imaje.jpg",
+  "link": "https://benjaminrshill.github.io/imaje"
+}], [{
+  "title": "Thump-a-Trump",
+  "miniDesc": "JavaScript game",
+  "desc": "JavaScript, HTML, CSS\n" + "The first group JavaScript project at iO Academy, we were tasked with creating a whack-a-mole style game of our choice.\n" + "My major point of focus was the HTML and CSS for the game screen, but I also helped with various JS functions.\n" + "In my free time during the evenings that week, I also designed a little pangolin logo for our team, which can be seen on the footer of the home screen.\n" + "<a href='https://dev.io-academy.uk/projects/2020-sept/2020-sept-thump-game/' target='_blank' rel='noopener noreferrer'>Live version</a>\n",
+  "image": "./app/images/thump.jpg",
+  "link": "https://github.com/Mayden-Academy/2020-sept-thump-game"
 }], [{
   "title": "About me",
   "miniDesc": "Art + Code = Fun",
-  "desc": "Having worn the hats of a teacher, database admin, and artist, I enjoy learning & problem solving, and art & design.\n" + "Living in Beijing for five years I learnt both Mandarin and tattooing. I speak Chinese fairly fluently.\n" + "More recently I have discovered an enjoyment of coding, with recent experience in JavaScript and PHP, among others, and studying at Mayden Academy have also greatly enjoyed working on collaborative projects in a supportive and enriching team environment.",
+  "desc": "With a talent for creativity and enjoyment of problem solving and programming, both as part of a team and individually, I am an enthusiastic full stack junior web developer. Fluent in Chinese, I spent five years living in Beijing studying Mandarin and tattooing.\n" + "After some years following the path of an artist, while building my own gallery website (and deciding to learn some JavaScript to get it behaving the way I wanted), I discovered a real enjoyment of coding, and eventually decided to pursue a career in development instead.\n" + "In recent months, both before and since joining iO Academy as a full-stack student, I’ve greatly enjoyed learning both JavaScript and PHP and working alongside my classmates on various group projects.\n" + "In my life outside of code, I paint, and spend a lot of time attempting various physical pursuits, including juggling, strength training, running, and bouldering. And I’m an avid TV watcher.",
   "image": "https://images.unsplash.com/photo-1507963901243-ebfaecd5f2f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2758&q=80",
   "link": "https://brownspunbear.github.io"
 }]];
