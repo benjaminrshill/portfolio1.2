@@ -58,11 +58,13 @@ function showSection(i) {
     viewer.forEach(item => item.classList.add('showHide'));
     switchContent(i);
     focusLink();
+    document.body.style.overflowY = 'hidden';
 }
 
 function hideSection(i) {
     viewer.forEach(item => item.classList.remove('showHide'));
     elements.sections[i].focus();
+    document.body.style.overflowY = 'auto';
 }
 
 function prev() {

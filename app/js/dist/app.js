@@ -46,6 +46,7 @@ function showSection(i) {
   });
   switchContent(i);
   focusLink();
+  document.body.style.overflowY = 'hidden';
 }
 
 function hideSection(i) {
@@ -53,6 +54,7 @@ function hideSection(i) {
     return item.classList.remove('showHide');
   });
   elements.sections[i].focus();
+  document.body.style.overflowY = 'auto';
 }
 
 function prev() {
