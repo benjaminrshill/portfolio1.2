@@ -112,6 +112,7 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 60vw 1fr;
+    width: 100%;
     border: 1px solid $b-color;
     img, .triangle, .itemHead {
       grid-column: 1;
