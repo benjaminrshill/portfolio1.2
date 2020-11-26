@@ -33,7 +33,7 @@ var items = [[{
 }], [{
   "title": "The Real MVP",
   "miniDesc": "Intro to OOP",
-  "desc": "PHP, SQL, CSS, HTML\n" + "With a focus on SOLID principles, the goal was to connect to an API and instantiate classes with sports teams, displaying the data simply on the front end with filter and .\n" + "As usual, our team worked beautifully together and everyone was able to do a little bit of everything, setting us up nicely for the Slim project mentioned previously (iO Academy Portal).\n" + "<a href='https://dev.io-academy.uk/projects/2020-sept/2020-sept-thump-game/' target='_blank' rel='noopener noreferrer'>Live version</a>\n",
+  "desc": "PHP, SQL, CSS, HTML\n" + "With a focus on SOLID principles, the goal was to connect to an API and instantiate classes with sports teams, displaying the data simply on the front end with filter and .\n" + "As usual, our team worked beautifully together and everyone was able to do a little bit of everything, setting us up nicely for the Slim project mentioned previously (iO Academy Portal).\n" + "<a href='https://dev.io-academy.uk/projects/2020-sept/2020-sept-sportsmvp/' target='_blank' rel='noopener noreferrer'>Live version</a>\n",
   "image": "./app/images/realmvp.jpg",
   "link": "https://github.com/Mayden-Academy/2020-sept-sportsmvp/"
 }], [{
