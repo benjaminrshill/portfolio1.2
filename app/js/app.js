@@ -103,7 +103,7 @@ function startTouch(e) {
 }
 
 function moveTouch(e) {
-    e.preventDefault();
+    // e.preventDefault();
     if (vars.initialX === 0) return;
     vars.moveX = e.touches[0].clientX;
     vars.finalX = vars.initialX - vars.moveX;

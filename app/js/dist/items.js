@@ -3,7 +3,7 @@
 var items = [[{
   "title": "My Library",
   "miniDesc": "Collection app",
-  "desc": "PHP, SQL, CSS, HTML\n" + "My first project using PHP, we were given four days to create a simple collection app, required to retrieve and display a collection of items from a database and be able to add and edit items. Users can also filter and search, sort by title, year, etc, and delete items.\n" + "Though a simple project, not utilising the later object-oriented programming and relevant frameworks that we have since learned, I believe that in context it offers an honest glimpse of my ability to deliver beyond the MVP in a short time." + "<a href='https://2020-benh.dev.io-academy.uk/library/' target='_blank' rel='noopener noreferrer'>Live version</a>\n",
+  "desc": "PHP, SQL, CSS, HTML\n" + "My first project using PHP, we were given four days to create a simple collection app, required to retrieve and display a collection of items from a database and be able to add and edit items. Users can also filter and search, sort by title, year, etc, and delete items.\n" + "Though a simple project, not utilising the later object-oriented programming and relevant frameworks that we have since learned, I believe that in context it offers an honest glimpse of my ability to deliver beyond the MVP in a short time.\n" + "<a href='https://2020-benh.dev.io-academy.uk/library/' target='_blank' rel='noopener noreferrer'>Live version</a>\n",
   "image": "./app/images/myLibrary.jpg",
   "link": "https://github.com/benjaminrshill/myLibrary"
 }], [{
@@ -33,7 +33,7 @@ var items = [[{
 }], [{
   "title": "The Real MVP",
   "miniDesc": "Intro to OOP",
-  "desc": "PHP, SQL, CSS, HTML\n" + "With a focus on SOLID principles, the goal was to connect to an API and instantiate classes with sports teams, displaying the data simply on the front end with filter and .\n" + "As usual, our team worked beautifully together and everyone was able to do a little bit of everything, setting us up nicely for the Slim project mentioned previously (iO Academy Portal).\n" + "<a href='https://dev.io-academy.uk/projects/2020-sept/2020-sept-sportsmvp/' target='_blank' rel='noopener noreferrer'>Live version</a>\n",
+  "desc": "PHP, SQL, CSS, HTML\n" + "With a focus on SOLID principles, the goal was to connect to an API and instantiate classes with sports teams, displaying the data simply on the front end, with basic filters.\n" + "As usual, our team worked beautifully together and everyone was able to do a little bit of everything, setting us up nicely for the Slim project mentioned previously (iO Academy Portal).\n" + "<a href='https://dev.io-academy.uk/projects/2020-sept/2020-sept-sportsmvp/' target='_blank' rel='noopener noreferrer'>Live version</a>\n",
   "image": "./app/images/realmvp.jpg",
   "link": "https://github.com/Mayden-Academy/2020-sept-sportsmvp/"
 }], [{
