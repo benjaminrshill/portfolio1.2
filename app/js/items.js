@@ -53,7 +53,7 @@ const items = [
             "title": "Aptitude Test",
             "miniDesc": "Legacy project",
             "desc":
-                "TypeScript, CSS, HTML, SQL\n" +
+                "TypeScript, SCSS, HTML, SQL\n" +
                 "Working on a legacy project with a less-than-ideal codebase, this project was a lesson in why it's a good idea to keep our code maintainable.\n" +
                 "The project week was hectic and full of failure, but a lot of fun and a great learning experience.",
             "image": "https://images.unsplash.com/photo-1522764725576-4cbbbf12c16d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80",
@@ -64,7 +64,7 @@ const items = [
             "title": "The Real MVP",
             "miniDesc": "Intro to OOP",
             "desc":
-                "PHP, SQL, CSS, HTML\n" +
+                "PHP, SQL, SCSS, HTML\n" +
                 "With a focus on SOLID principles, the goal was to connect to an API and instantiate classes with sports teams, displaying the data simply on the front end, with basic filters.\n" +
                 "As usual, our team worked beautifully together and everyone was able to do a little bit of everything, setting us up nicely for the Slim project mentioned previously (iO Academy Portal).\n" +
                 "<a href='https://dev.io-academy.uk/projects/2020-sept/2020-sept-sportsmvp/' target='_blank' rel='noopener noreferrer'>Live version</a>\n",
