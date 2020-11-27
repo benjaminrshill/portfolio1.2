@@ -8,7 +8,7 @@ const items = [
                 "My first project using PHP, we were given four days to create a simple collection app, required to retrieve and display a collection of items from a database and be able to add and edit items. Users can also filter and search, sort by title, year, etc, and delete items.\n" +
                 "Though a simple project, not utilising the later object-oriented programming and relevant frameworks that we have since learned, I believe that in context it offers an honest glimpse of my ability to deliver beyond the MVP in a short time.\n" +
                 "<a href='https://2020-benh.dev.io-academy.uk/library/' target='_blank' rel='noopener noreferrer'>Live version</a>\n",
-            "image": "./app/images/myLibrary.jpg",
+            "image": "./app/images/items/myLibrary.jpg",
             "link": "https://github.com/benjaminrshill/myLibrary"
         }
     ],[
@@ -32,7 +32,7 @@ const items = [
                 "The decision to dive into React at this stage was fairly misguided, as I did not have the required knowledge, but I nonetheless managed to create a basic interactive gallery using React and the HTML5 drag and drop API.\n" +
                 "The app allows a user to drag pre-loaded images from a side container into the gallery (and back), rearrange gallery images, add and delete rows, move rows up and down, and change the size of the gallery and spacing between images. Gallery rows resize based on their content.\n" +
                 "The end goal is a fully customisable image gallery for artists and other creatives to upload and display their work.",
-            "image": "./app/images/imaje.jpg",
+            "image": "./app/images/items/imaje.jpg",
             "link": "https://benjaminrshill.github.io/imaje"
         }
     ],[
@@ -45,7 +45,7 @@ const items = [
                 "My major point of focus was the HTML and CSS for the game screen, but I also helped with various JS functions.\n" +
                 "In my free time during the evenings that week, I also designed a little pangolin logo for our team, which can be seen on the footer of the home screen.\n" +
                 "<a href='https://dev.io-academy.uk/projects/2020-sept/2020-sept-thump-game/' target='_blank' rel='noopener noreferrer'>Live version</a>\n",
-            "image": "./app/images/thump.jpg",
+            "image": "./app/images/items/thump.jpg",
             "link": "https://github.com/Mayden-Academy/2020-sept-thump-game"
         }
     ],[
@@ -68,7 +68,7 @@ const items = [
                 "With a focus on SOLID principles, the goal was to connect to an API and instantiate classes with sports teams, displaying the data simply on the front end, with basic filters.\n" +
                 "As usual, our team worked beautifully together and everyone was able to do a little bit of everything, setting us up nicely for the Slim project mentioned previously (iO Academy Portal).\n" +
                 "<a href='https://dev.io-academy.uk/projects/2020-sept/2020-sept-sportsmvp/' target='_blank' rel='noopener noreferrer'>Live version</a>\n",
-            "image": "./app/images/realmvp.jpg",
+            "image": "./app/images/items/realmvp.jpg",
             "link": "https://github.com/Mayden-Academy/2020-sept-sportsmvp/"
         }
     ],[
@@ -79,9 +79,10 @@ const items = [
                 "With a talent for creativity and enjoyment of problem solving and programming, both as part of a team and individually, I am an enthusiastic full stack junior web developer. Fluent in Chinese, I spent five years living in Beijing studying Mandarin and tattooing.\n" +
                 "After some years following the path of an artist, while building my own gallery website (and deciding to learn some JavaScript to get it behaving the way I wanted), I discovered a real enjoyment of coding, and eventually decided to pursue a career in development instead.\n" +
                 "In recent months, both before and since joining iO Academy as a full-stack student, I’ve greatly enjoyed learning both JavaScript and PHP and working alongside my classmates on various group projects.\n" +
-                "In my life outside of code, I paint, and spend a lot of time attempting various physical pursuits, including juggling, strength training, running, and bouldering. And I’m an avid TV watcher.",
+                "In my life outside of code, I paint, and spend a lot of time attempting various physical pursuits, including juggling, strength training, running, and bouldering. And I’m an avid TV watcher.\n" +
+                "<a href='./app/images/CSM_Certificate.pdf' target='_blank' rel='noopener noreferrer'>Scrum Master Certificate</a>\n",
             "image": "https://images.unsplash.com/photo-1507963901243-ebfaecd5f2f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2758&q=80",
-            "link": "https://brownspunbear.github.io"
+            "link": ""
         }
     ]
 ];

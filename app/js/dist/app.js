@@ -71,8 +71,9 @@ function next() {
 
 function switchContent(i) {
   var cleanUrl = items[i][0].link.replace(/^https*:\/\//, '');
+  var url = cleanUrl.length > 0 ? '<a tabindex="0" href="' + items[i][0].link + '" target="_blank" rel="noopener noreferrer"><h5>' + cleanUrl + '</h5></a>' : '<h5>' + items[i][0].miniDesc + '</h5>';
   var pDesc = items[i][0].desc.replace(/\n/g, '</p><p>');
-  elements.itemBody.innerHTML = '<h4>' + items[i][0].title + '</h4><a tabindex="0" href="' + items[i][0].link + '" target="_blank" rel="noopener noreferrer"><h5>' + cleanUrl + '</h5></a><p>' + pDesc + '</p>';
+  elements.itemBody.innerHTML = '<h4>' + items[i][0].title + '</h4>' + url + '<p>' + pDesc + '</p>';
 }
 
 function focusLink() {
@@ -86,7 +87,6 @@ function startTouch(e) {
 }
 
 function moveTouch(e) {
-  // e.preventDefault();
   if (vars.initialX === 0) return;
   vars.moveX = e.touches[0].clientX;
   vars.finalX = vars.initialX - vars.moveX;
