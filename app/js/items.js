@@ -13,6 +13,20 @@ const items = [
         }
     ],[
         {
+            "title": "tilly",
+            "miniDesc": "Social app",
+            "desc":
+                "React, node.js, MongoDB, GraphQL\n" +
+                "Over five days our four-person team created the beginnings of a social app giving users the opportunity to post something they learned that day.\n" +
+                "The app currently enables users to sign up and log in, post lessons, view user profiles, follow and unfollow other users, and view a timeline of lessons from themselves and those they are following.\n" +
+                "I prototyped the design in Figma, created an HTML/CSS template for the team to work from when implementing components, and then worked primarily with another team member on the front end architecture and major features: sign up and log in, post lessons, follow users, etc.\n" +
+                "We are currently working on cleaning it up in preparation for a live version.\n" +
+                "<a href='https://www.figma.com/file/d1k4O26cwxl3WL8n3pLDY9/pangolins2.0?node-id=0%3A1' target='_blank' rel='noopener noreferrer'>Figma prototyping</a>\n",
+            "image": "./app/images/items/tilly.jpg",
+            "link": "https://github.com/Mayden-Academy/2020-sept-tilly-ui"
+        }
+    ],[
+        {
             "title": "iO Portal",
             "miniDesc": "Legacy project",
             "desc":
