@@ -5,7 +5,8 @@ $b-color: #ff3541;
 $c-color: #eee;
 $a-type: 'Raleway', Helvetica, Arial, sans-serif;
 $b-type: 'Sanchez', Georgia, Times, serif;
-$a-width: 96vw;
+$mobi-width: 96vw;
+$desk-width: 70vw;
 
 * {
   margin: auto;
@@ -31,7 +32,7 @@ h1, h2, h3, h4 {
 header {
   display: flex;
   justify-content: flex-start;
-  width: $a-width;
+  width: $mobi-width;
   margin: 2vw auto;
   div {
     margin: auto 1vw;
@@ -58,7 +59,7 @@ nav {
   grid-template-columns: 1fr 10vw;
   position: absolute;
   top: 0;
-  width: $a-width;
+  width: $mobi-width;
   margin: 0.5vw auto;
   button {
     border: 0;
@@ -106,7 +107,7 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2vw;
-  width: $a-width;
+  width: $mobi-width;
   margin-bottom: 4vw;
   section {
     display: grid;
@@ -297,7 +298,7 @@ main {
     grid-template-columns: 1fr 1fr;
     column-gap: 2vw;
     section {
-      grid-template-rows: calc(20vw + 10vh);
+      grid-template-rows: calc(15vw + 15vh);
       cursor: pointer;
       .itemHead {
         h3 {
@@ -333,6 +334,7 @@ main {
 
 @media screen and (min-width: 1600px) {
   main {
-    grid-template-columns: 1fr 1fr 1fr;
+    width: $desk-width;
+    //grid-template-columns: 1fr 1fr 1fr;
   }
 }
