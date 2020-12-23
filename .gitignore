@@ -1,3 +1,13 @@
 node_modules/
 .idea/
 .DS_Store
+
+app/scss/articles.scss
+app/css/articles.css
+thoughts.html
+app/js/thoughts.js
+app/js/dist/thoughts.js
+app/js/dist/thoughts.js.map
+app/js/articles.js
+app/js/dist/articles.js
+app/js/dist/articles.js.map

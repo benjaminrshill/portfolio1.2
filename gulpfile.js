@@ -15,7 +15,7 @@ function babelCompile(cb) {
 }
 
 function sassCompile(cb) {
-    return gulp.src("app/scss/style.scss")
+    return gulp.src("app/scss/*.scss")
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(sourcemaps.write())
