@@ -83,14 +83,14 @@ function switchContent(i) {
         ? '<a tabindex="0" href="' + items[i][0].link + '" target="_blank" rel="noopener noreferrer"><h5>' + cleanUrl + '</h5></a>'
         : '<h5>' + items[i][0].miniDesc + '</h5>';
     let pDesc = items[i][0].desc.replace(/\n/g, '</p><p>');
-    elements.itemBody.innerHTML =
-        '<h4>'
+    elements.modal.innerHTML =
+        '<div><div id="itemTitles"><h4>'
         + items[i][0].title
         + '</h4>'
         + url
-        + '<p>'
+        + '</div><div id="itemBody"><p>'
         + pDesc
-        + '</p>';
+        + '</p></div></div>';
 }
 
 function focusLink() {

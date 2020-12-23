@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Sanchez&family=Raleway:wght@200;400;700&display=swap');
-
-$a-color: #111111;
-$b-color: #ff3541;
-$c-color: #eee;
-$a-type: 'Raleway', Helvetica, Arial, sans-serif;
-$b-type: 'Sanchez', Georgia, Times, serif;
-$mobi-width: 96vw;
-$desk-width: 70vw;
+@import './variables.scss';
 
 * {
   margin: auto;
