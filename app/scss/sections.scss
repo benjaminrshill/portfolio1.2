@@ -114,6 +114,12 @@ main {
         text-decoration: underline;
       }
     }
+    h6 {
+      padding: 6px;
+      font-size: large;
+      color: $a-color;
+      background: $b-color;
+    }
   }
 }
 
