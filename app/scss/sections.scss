@@ -32,14 +32,22 @@ main {
       text-align: right;
       h3 {
         margin: 0 1vw 0 0;
-        color: $c-color;
         font-size: 2.5rem;
+        color: $c-color;
       }
       h4 {
-        margin: 0 1vw 0.5vw 0;
-        color: $b-color;
-        font-weight: 400;
+        margin: 0 1vw 0 0;
         font-size: 1.8rem;
+        font-weight: 400;
+        color: $b-color;
+      }
+      h6 {
+        margin: 0 1vw 0.5vw 0;
+        text-transform: uppercase;
+        font-size: 0.3rem;
+        font-weight: 400;
+        color: $b-color;
+        opacity: 0.4;
       }
     }
     &:hover .triangle, &:hover .itemHead {
@@ -114,11 +122,17 @@ main {
         text-decoration: underline;
       }
     }
-    h6 {
-      padding: 6px;
+    h5 {
+      text-transform: uppercase;
+      padding: 1vw 0 0 1vw;
       font-size: large;
-      color: $a-color;
-      background: $b-color;
+      color: $b-color;
+    }
+    h6 {
+      text-transform: uppercase;
+      padding: 1vw 0 0 1vw;
+      font-size: x-large;
+      color: $c-color;
     }
   }
 }

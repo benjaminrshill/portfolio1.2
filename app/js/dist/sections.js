@@ -7,7 +7,7 @@ function makeSection(item) {
   var section = document.createElement('section');
   section.setAttribute('tabindex', '0');
   section.setAttribute('role', 'button');
-  section.innerHTML = '<img alt="example" src="' + item[0].image + '" /><div class="triangle"></div><div class="itemHead"><h3>' + item[0].title + '</h3><h4>' + item[0].miniDesc + '</h4></div>';
+  section.innerHTML = '<img alt="example" src="' + item[0].image + '" /><div class="triangle"></div><div class="itemHead"><h3>' + item[0].title + '</h3><h4>' + item[0].miniDesc + '</h4><h6>' + item[0].tools + '</h6></div>';
   return section;
 }
 
@@ -71,7 +71,7 @@ function switchContent(i) {
   var cleanUrl = items[i][0].link.replace(/^https*:\/\//, '');
   var url = cleanUrl.length > 0 ? '<a tabindex="0" href="' + items[i][0].link + '" target="_blank" rel="noopener noreferrer"><h5>' + cleanUrl + '</h5></a>' : '<h5>' + items[i][0].miniDesc + '</h5>';
   var pDesc = items[i][0].desc.replace(/\n/g, '</p><p>');
-  elements.modal.innerHTML = '<div><div id="itemTitles"><h4>' + items[i][0].title + '</h4>' + url + '</div><div id="itemBody"><p>' + pDesc + '</p></div></div>';
+  elements.modal.innerHTML = '<div><div id="itemTitles"><h4>' + items[i][0].title + '</h4>' + url + '</div><div id="itemBody"><h5>' + items[i][0].tools + '</h5><p>' + pDesc + '</p></div></div>';
 }
 
 function focusLink() {
