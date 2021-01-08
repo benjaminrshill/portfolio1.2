@@ -8,6 +8,13 @@ var items = [[{
   "image": "https://images.unsplash.com/photo-1507963901243-ebfaecd5f2f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2758&q=80",
   "link": ""
 }], [{
+  "title": "turtledot",
+  "miniDesc": "Weekly itemiser",
+  "tools": "React, HTML5, CSS\n",
+  "desc": "Since the beginning of 2021 I've been working on a little project for my own use!\n" + "Turtledot is a weekly itemiser. Items/tasks can be created and given a weekly target and colour category; items can be added to 'this week' and 'next week' and scheduled by day; and items scheduled for this week can be checked off, with met targets given a satisfying 'blackout' to congratulate you.\n" + "The app currently uses localStorage, but is being updated regularly and a version with more robust long-term history and device syncing is in the works.\n" + "If you'd like to give it a try, it works well on mobile, but the desktop version allows rearrangement of items by drag and drop (using the HTML5 D&amp;D API).\n" + "<a href='https://www.figma.com/file/wbBmJiKTJfry0WIA3kzMLG/turtledot?node-id=0%3A1' target='_blank' rel='noopener noreferrer'>Figma prototyping</a>\n",
+  "image": "./app/images/items/turtledot.jpg",
+  "link": "https://github.com/benjaminrshill/turtledot"
+}], [{
   "title": "tilly",
   "miniDesc": "Social app",
   "tools": "React, node.js, MongoDB, GraphQL\n",
