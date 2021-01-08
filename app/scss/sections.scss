@@ -2,6 +2,11 @@
 @import './variables.scss';
 
 main {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2vw;
+  width: $mobi-width;
+  margin-bottom: 4vw;
   section {
     display: grid;
     grid-template-columns: 1fr;
@@ -200,5 +205,26 @@ main {
   }
   #exit {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: $desk-width;
+    section {
+      grid-template-rows: calc(12vw + 10vh);
+      .itemHead {
+        h3 {
+          font-size: 0.5rem;
+        }
+        h4 {
+          font-size: 0.4rem;
+        }
+        h6 {
+          font-size: 0.2rem;
+        }
+      }
+    }
   }
 }

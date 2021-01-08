@@ -95,14 +95,6 @@ nav {
   }
 }
 
-main {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 2vw;
-  width: $mobi-width;
-  margin-bottom: 4vw;
-}
-
 @media screen and (min-width: 800px) {
 
   header {
@@ -147,11 +139,5 @@ main {
         }
       }
     }
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  main {
-    width: $desk-width;
   }
 }
