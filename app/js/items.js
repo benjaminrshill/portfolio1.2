@@ -25,8 +25,7 @@ const items = [
                 "Turtledot is a weekly itemiser. Items/tasks can be created and given a weekly target and colour category; items can be added to 'this week' and 'next week' and scheduled by day; and items scheduled for this week can be checked off, with met targets given a satisfying 'blackout' to congratulate you.\n" +
                 "The app currently uses localStorage, but is being updated regularly and a version with more robust long-term history and device syncing is in the works.\n" +
                 "If you'd like to give it a try, it works well on mobile (hopefully!), but the desktop version allows rearrangement of items by drag and drop (using the HTML5 D&amp;D API).\n" +
-                "<a href='https://benjaminrshill.github.io/turtledot' target='_blank' rel='noopener noreferrer'>Live version</a>\n" +
-                "<a href='https://www.figma.com/file/wbBmJiKTJfry0WIA3kzMLG/turtledot?node-id=0%3A1' target='_blank' rel='noopener noreferrer'>Figma prototyping</a>\n",
+                "<a href='https://benjaminrshill.github.io/turtledot' target='_blank' rel='noopener noreferrer'>Live version</a>",
             "image": "./app/images/items/turtledot.jpg",
             "link": "https://github.com/benjaminrshill/turtledot"
         }
@@ -60,17 +59,35 @@ const items = [
         }
     ],[
         {
-            "title": "iO Portal",
-            "miniDesc": "Legacy project",
+            "title": "Legacy",
+            "miniDesc": "Legacy projects",
             "tools":
-                "Slim (PHP), JavaScript, Bootstrap\n",
+                "PHP, TypeScript, SCSS, SQL\n",
             "desc":
+                "<h6>iO Portal</h6>\n" +
                 "Continuing a legacy project using the Slim framework, our class worked on a few stories which increased functionality on various parts of the portal and added two new sections.\n" +
-                "My main work, alongside two classmates, was adding a ‘courses’ and ‘add courses’ section to the portal, which included creating routes, controllers, models, entities, and view helpers in Slim, and some JavaScript to intercept default PHP post behaviour and validate user input. Also unit testing.",
-            "image": "https://images.unsplash.com/photo-1536226957245-c83ec577a82e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+                "My main work, alongside two classmates, was adding a ‘courses’ and ‘add courses’ section to the portal, which included creating routes, controllers, models, entities, and view helpers in Slim, and some JavaScript to intercept default PHP post behaviour and validate user input. Also unit testing.\n" +
+                "<a href='https://github.com/Mayden-Academy/AcademyPortal/' target='_blank' rel='noopener noreferrer'>on GitHub</a>\n" +
+                "<h6>Aptitude Test</h6>\n" +
+                "Working on a legacy project with a less-than-ideal codebase written in TypeScript, this project was a lesson in why it's a good idea to keep our code maintainable.\n" +
+                "The project week was hectic and full of failure, but a lot of fun and a great learning experience.\n" +
+                "<a href='https://github.com/Mayden-Academy/aptitude-test' target='_blank' rel='noopener noreferrer'>on GitHub</a>\n",
+            "image": "./app/images/items/aptitudeTest.jpg",
             "link": "https://github.com/Mayden-Academy/AcademyPortal/"
         }
     ],[
+    //     {
+    //         "title": "iO Portal",
+    //         "miniDesc": "Legacy project",
+    //         "tools":
+    //             "Slim (PHP), JavaScript, Bootstrap\n",
+    //         "desc":
+    //             "Continuing a legacy project using the Slim framework, our class worked on a few stories which increased functionality on various parts of the portal and added two new sections.\n" +
+    //             "My main work, alongside two classmates, was adding a ‘courses’ and ‘add courses’ section to the portal, which included creating routes, controllers, models, entities, and view helpers in Slim, and some JavaScript to intercept default PHP post behaviour and validate user input. Also unit testing.",
+    //         "image": "https://images.unsplash.com/photo-1536226957245-c83ec577a82e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    //         "link": "https://github.com/Mayden-Academy/AcademyPortal/"
+    //     }
+    // ],[
         {
             "title": "bluesungfruit",
             "miniDesc": "Artist gallery",
@@ -85,32 +102,22 @@ const items = [
             "link": "https://bluesungfruit.com"
         }
     ],[
-    //     {
-    //         "title": "IMAJE",
-    //         "miniDesc": "React experiment",
-    //         "desc":
-    //             "React, HTML\n" +
-    //             "Before attending iO Academy, I spent some time learning JavaScript at home.\n" +
-    //             "The decision to dive into React at this stage was fairly misguided, as I did not have the required knowledge, but I nonetheless managed to create a basic interactive gallery using React and the HTML5 drag and drop API.\n" +
-    //             "The app allows a user to drag pre-loaded images from a side container into the gallery (and back), rearrange gallery images, add and delete rows, move rows up and down, and change the size of the gallery and spacing between images. Gallery rows resize based on their content.\n" +
-    //             "The end goal is a fully customisable image gallery for artists and other creatives to upload and display their work.",
-    //         "image": "./app/images/items/imaje.jpg",
-    //         "link": "https://benjaminrshill.github.io/imaje"
-    //     }
-    // ],[
-    //     {
-    //         "title": "Thump-a-Trump",
-    //         "miniDesc": "JavaScript game",
-    //         "desc":
-    //             "JavaScript, HTML, CSS\n" +
-    //             "The first group JavaScript project at iO Academy, we were tasked with creating a whack-a-mole style game of our choice.\n" +
-    //             "My major point of focus was the HTML and CSS for the game screen, but I also helped with various JS functions.\n" +
-    //             "In my free time during the evenings that week, I also designed a little pangolin logo for our team, which can be seen on the footer of the home screen.\n" +
-    //             "<a href='https://dev.io-academy.uk/projects/2020-sept/2020-sept-thump-game/' target='_blank' rel='noopener noreferrer'>Live version</a>\n",
-    //         "image": "./app/images/items/thump.jpg",
-    //         "link": "https://github.com/Mayden-Academy/2020-sept-thump-game"
-    //     }
-    // ],[
+        {
+            "title": "IMAJE",
+            "miniDesc": "React experiment",
+            "tools":
+                "React, HTML5, CSS\n",
+            "desc":
+                "React, HTML\n" +
+                "Before attending iO Academy, I spent some time learning JavaScript at home.\n" +
+                "The decision to dive into React at this stage was fairly misguided, as I did not have the required knowledge, but I nonetheless managed to create a basic interactive gallery using React and the HTML5 drag and drop API.\n" +
+                "The app allows a user to drag pre-loaded images from a side container into the gallery (and back), rearrange gallery images, add and delete rows, move rows up and down, and change the size of the gallery and spacing between images. Gallery rows resize based on their content.\n" +
+                "The end goal is a fully customisable image gallery for artists and other creatives to upload and display their work.",
+            "image": "./app/images/items/imaje.jpg",
+            "link": "https://benjaminrshill.github.io/imaje"
+        }
+
+    ],[
         {
             "title": "Games",
             "miniDesc": "JavaScript games",
@@ -127,18 +134,18 @@ const items = [
             "link": "https://github.com/Mayden-Academy/2020-sept-thump-game"
         }
     ],[
-        {
-            "title": "Aptitude Test",
-            "miniDesc": "Legacy project",
-            "tools":
-                "TypeScript, SCSS, HTML, SQL\n",
-            "desc":
-                "Working on a legacy project with a less-than-ideal codebase, this project was a lesson in why it's a good idea to keep our code maintainable.\n" +
-                "The project week was hectic and full of failure, but a lot of fun and a great learning experience.",
-            "image": "https://images.unsplash.com/photo-1522764725576-4cbbbf12c16d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80",
-            "link": "https://github.com/Mayden-Academy/aptitude-test"
-        }
-    ],[
+    //     {
+    //         "title": "Aptitude Test",
+    //         "miniDesc": "Legacy project",
+    //         "tools":
+    //             "TypeScript, SCSS, HTML, SQL\n",
+    //         "desc":
+    //             "Working on a legacy project with a less-than-ideal codebase, this project was a lesson in why it's a good idea to keep our code maintainable.\n" +
+    //             "The project week was hectic and full of failure, but a lot of fun and a great learning experience.",
+    //         "image": "https://images.unsplash.com/photo-1522764725576-4cbbbf12c16d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80",
+    //         "link": "https://github.com/Mayden-Academy/aptitude-test"
+    //     }
+    // ],[
         {
             "title": "The Real MVP",
             "miniDesc": "Intro to OOP",
