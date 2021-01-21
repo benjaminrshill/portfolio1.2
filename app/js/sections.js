@@ -16,11 +16,13 @@ function makeSection(item) {
         + '</h4><h6>'
         + item[0].tools
         + '</h6></div>';
+    section.classList.add('sueStorm');
     return section;
 }
 
 items.forEach((item, i) => {
     let section = portfolio.appendChild(makeSection(item));
+    setTimeout(() => section.classList.remove('sueStorm'), i * 200);
     section.addEventListener('click', function() {
         showSection(i);
     });

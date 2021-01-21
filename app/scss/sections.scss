@@ -13,6 +13,7 @@ main {
     grid-template-rows: 60vw 1fr;
     width: 100%;
     border: 1px solid $b-color;
+    transition: opacity 2s;
     img, .triangle, .itemHead {
       grid-column: 1;
       grid-row: 1;
@@ -59,6 +60,10 @@ main {
       opacity: 0.6;
     }
   }
+}
+
+.sueStorm {
+  opacity: 0;
 }
 
 #overlay {

@@ -8,11 +8,15 @@ function makeSection(item) {
   section.setAttribute('tabindex', '0');
   section.setAttribute('role', 'button');
   section.innerHTML = '<img alt="example" src="' + item[0].image + '" /><div class="triangle"></div><div class="itemHead"><h3>' + item[0].title + '</h3><h4>' + item[0].miniDesc + '</h4><h6>' + item[0].tools + '</h6></div>';
+  section.classList.add('sueStorm');
   return section;
 }
 
 items.forEach(function (item, i) {
   var section = portfolio.appendChild(makeSection(item));
+  setTimeout(function () {
+    return section.classList.remove('sueStorm');
+  }, i * 200);
   section.addEventListener('click', function () {
     showSection(i);
   });
