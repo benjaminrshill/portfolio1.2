@@ -9,13 +9,19 @@ function makeSection(item) {
     section.innerHTML =
         '<img alt="example" src="'
         + item[0].image
-        + '" /><div class="triangle"></div><div class="itemHead"><h3>'
-        + item[0].title
-        + '</h3><h4>'
-        + item[0].miniDesc
-        + '</h4><h6>'
-        + item[0].tools
-        + '</h6></div>';
+        + '" />'
+        + '<div class="triangle"></div>'
+        + '<div class="itemHead">'
+            + '<h3>'
+            + item[0].title
+            + '</h3>'
+            + '<h4>'
+            + item[0].miniDesc
+            + '</h4>'
+            + '<h6>'
+            + item[0].tools
+            + '</h6>'
+        + '</div>';
     section.classList.add('sueStorm');
     return section;
 }
@@ -84,19 +90,33 @@ function next() {
 function switchContent(i) {
     let cleanUrl = items[i][0].link.replace(/^https*:\/\//, '');
     let url = cleanUrl.length > 0
-        ? '<a tabindex="0" href="' + items[i][0].link + '" target="_blank" rel="noopener noreferrer"><h5>' + cleanUrl + '</h5></a>'
-        : '<h5>' + items[i][0].miniDesc + '</h5>';
+        ? '<a tabindex="0" href="' + items[i][0].link + '" target="_blank" rel="noopener noreferrer"><h4>' + cleanUrl + '</h4></a>'
+        : '<h4>' + items[i][0].miniDesc + '</h4>';
     let pDesc = items[i][0].desc.replace(/\n/g, '</p><p>');
     elements.modal.innerHTML =
-        '<div><div id="itemTitles"><h4>'
-        + items[i][0].title
-        + '</h4>'
-        + url
-        + '</div><div id="itemBody"><h5>'
-        + items[i][0].tools
-        + '</h5><p>'
-        + pDesc
-        + '</p></div></div>';
+        '<div>'
+            + '<div id="itemTitles">'
+                + '<h3 style="padding-left: '
+                + (10 / items[i][0].title.length) + 'vw'
+                + '; font-size: '
+                + (80 / items[i][0].title.length) + 'vw'
+                + '; letter-spacing: '
+                + (10 / items[i][0].title.length) + 'vw'
+                + '; line-height: calc('
+                + (items[i][0].title.length) + 'vh + ' + (45 / items[i][0].title.length) + 'vw)">'
+                + items[i][0].title
+                + '</h3>'
+            + '</div>'
+            + '<div id="itemBody">'
+                + url
+                + '<h5>'
+                + items[i][0].tools
+                + '</h5>'
+                + '<p>'
+                + pDesc
+                + '</p>'
+            + '</div>'
+        + '</div>';
 }
 
 function focusLink() {
@@ -173,11 +193,11 @@ document.addEventListener('keyup', function(e) {
     if (e.key === 'Escape') hideSection(vars.p);
 });
 
-elements.overlay.addEventListener('click', function () {
+elements.overlay.addEventListener('click', function() {
     hideSection(vars.p);
 });
 
-elements.exit.addEventListener('click', function () {
+elements.exit.addEventListener('click', function() {
     hideSection(vars.p);
 });
 

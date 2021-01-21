@@ -108,7 +108,6 @@ const items = [
             "tools":
                 "React, HTML5, CSS\n",
             "desc":
-                "React, HTML\n" +
                 "Before attending iO Academy, I spent some time learning JavaScript at home.\n" +
                 "The decision to dive into React at this stage was fairly misguided, as I did not have the required knowledge, but I nonetheless managed to create a basic interactive gallery using React and the HTML5 drag and drop API.\n" +
                 "The app allows a user to drag pre-loaded images from a side container into the gallery (and back), rearrange gallery images, add and delete rows, move rows up and down, and change the size of the gallery and spacing between images. Gallery rows resize based on their content.\n" +
