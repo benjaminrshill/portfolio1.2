@@ -75,7 +75,9 @@ function switchContent(i) {
   var cleanUrl = items[i][0].link.replace(/^https*:\/\//, '');
   var url = cleanUrl.length > 0 ? '<a tabindex="0" href="' + items[i][0].link + '" target="_blank" rel="noopener noreferrer"><h4>' + cleanUrl + '</h4></a>' : '<h4>' + items[i][0].miniDesc + '</h4>';
   var pDesc = items[i][0].desc.replace(/\n/g, '</p><p>');
-  elements.modal.innerHTML = '<div>' + '<div id="itemTitles">' + '<h3 style="padding-left: ' + 10 / items[i][0].title.length + 'vw' + '; font-size: ' + 80 / items[i][0].title.length + 'vw' + '; letter-spacing: ' + 10 / items[i][0].title.length + 'vw' + '; line-height: calc(' + items[i][0].title.length + 'vh + ' + 45 / items[i][0].title.length + 'vw)">' + items[i][0].title + '</h3>' + '</div>' + '<div id="itemBody">' + url + '<h5>' + items[i][0].tools + '</h5>' + '<p>' + pDesc + '</p>' + '</div>' + '</div>';
+  var vRatio = window.innerWidth / window.innerHeight > 1;
+  var letters = items[i][0].title.length;
+  elements.modal.innerHTML = '<div>' + '<div id="itemTitles">' + '<h3 style="padding-left: ' + 10 / letters + 'vw' + '; font-size: ' + 80 / letters + 'vw' + '; letter-spacing: ' + 10 / letters + 'vw' + '; line-height: ' + ((vRatio ? 25 : 10) + (letters > 10 ? letters - 4 : letters)) + 'vh">' + items[i][0].title + '</h3>' + '</div>' + '<div id="itemBody">' + url + '<h5>' + items[i][0].tools + '</h5>' + '<p>' + pDesc + '</p>' + '</div>' + '</div>';
 }
 
 function focusLink() {
