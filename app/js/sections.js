@@ -93,7 +93,6 @@ function switchContent(i) {
         ? '<a tabindex="0" href="' + items[i][0].link + '" target="_blank" rel="noopener noreferrer"><h4>' + cleanUrl + '</h4></a>'
         : '<h4>' + items[i][0].miniDesc + '</h4>';
     let pDesc = items[i][0].desc.replace(/\n/g, '</p><p>');
-    let vRatio = window.innerWidth / window.innerHeight > 1;
     let letters = items[i][0].title.length;
     elements.modal.innerHTML =
         '<div>'
@@ -105,7 +104,7 @@ function switchContent(i) {
                 + '; letter-spacing: '
                 + (10 / letters) + 'vw'
                 + '; line-height: '
-                + ((vRatio ? 25 : 10) + (letters > 10 ? letters-4 : letters)) + 'vh">'
+                + (10 + (letters > 10 ? letters-4 : letters)) + 'vh">'
                 + items[i][0].title
                 + '</h3>'
             + '</div>'

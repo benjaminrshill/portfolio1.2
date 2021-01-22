@@ -111,8 +111,9 @@ main {
     }
   }
   #itemBody {
+    z-index: 52;
     position: fixed;
-    bottom: 50px;
+    top: 90px;
     left: 0;
     right: 0;
     width: 100%;
