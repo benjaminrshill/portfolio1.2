@@ -23,8 +23,8 @@ const items = [
             "desc":
                 "Since the beginning of 2021 I've been working on a little project for my own use!\n" +
                 "Turtledot is a weekly itemiser. Items/tasks can be created and given a weekly target and colour category; items can be added to 'this week' and 'next week' and scheduled by day; and items scheduled for this week can be checked off, with met targets given a satisfying 'blackout' to congratulate you.\n" +
-                "The app currently uses localStorage, but is being updated regularly and a version with more robust long-term history and device syncing is in the works.\n" +
-                "If you'd like to give it a try, it works well on mobile (hopefully!), but the desktop version allows rearrangement of items by drag and drop (using the HTML5 D&amp;D API).\n" +
+                "The app uses localStorage, and is fully functional offline - add it to your home screen!\n" +
+                "If you'd like to give it a try, it is designed for mobile, although using it in a desktop browser does allow you to drag and drop rows to reorder items (using the HTML5 D&amp;D API).\n" +
                 "<a href='https://benjaminrshill.github.io/turtledot' target='_blank' rel='noopener noreferrer'>Live version</a>",
             "image": "./app/images/items/turtledot.jpg",
             "link": "https://github.com/benjaminrshill/turtledot"
