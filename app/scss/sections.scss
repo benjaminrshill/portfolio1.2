@@ -121,7 +121,7 @@ main {
     height: calc(100vh - 140px);
     padding: 0 0 4vh 0;
     overflow-y: scroll;
-    color: $c-color;
+    color: #bbb;
     background: $a-color;
     mix-blend-mode: multiply;
     p {
@@ -135,11 +135,19 @@ main {
         text-decoration: underline;
       }
     }
-    h4 {
-      padding: 20px;
-      font-size: 14px;
-      color: $a-color;
-      background: $b-color;
+    .linkBar {
+      display: flex;
+      a {
+        width: 100%;
+        margin: 2px;
+      }
+      h4 {
+        height: 40px;
+        font-size: 12px;
+        line-height: 40px;
+        color: $a-color;
+        background: $b-color;
+      }
     }
     h5, h6 {
       padding: 2vh 0 0 0;
@@ -218,6 +226,12 @@ main {
       p {
         margin: 1vw;
         font-size: 18px;
+      }
+      .linkBar {
+        h4 {
+          font-size: 20px;
+          line-height: 40px;
+        }
       }
     }
   }
