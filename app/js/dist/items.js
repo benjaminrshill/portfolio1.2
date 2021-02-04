@@ -53,7 +53,7 @@ var items = [[{
   "desc": "<h6>iO Portal</h6>\n" + "Continuing a legacy project using the Slim framework, our class worked on a few stories which increased functionality on various parts of the portal and added two new sections.\n" + "My main work, alongside two classmates, was adding a ‘courses’ and ‘add courses’ section to the portal, which included creating routes, controllers, models, entities, and view helpers in Slim, and some JavaScript to intercept default PHP post behaviour and validate user input. Also unit testing.\n" + "<h6>Aptitude Test</h6>\n" + "Working on a legacy project with a less-than-ideal codebase written in TypeScript, this project was a lesson in why it's a good idea to keep our code maintainable.\n" + "The project week was hectic and full of failure, but a lot of fun and a great learning experience.\n",
   "image": "./app/images/items/aptitudeTest.jpg",
   "links": [{
-    title: "portal",
+    title: "io portal",
     link: "https://github.com/Mayden-Academy/AcademyPortal/"
   }, {
     title: "aptitude test",

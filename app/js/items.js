@@ -96,7 +96,7 @@ const items = [
             "image": "./app/images/items/aptitudeTest.jpg",
             "links": [
                 {
-                    title: "portal",
+                    title: "io portal",
                     link: "https://github.com/Mayden-Academy/AcademyPortal/"
                 },{
                     title: "aptitude test",
