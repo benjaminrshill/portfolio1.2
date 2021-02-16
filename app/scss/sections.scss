@@ -192,11 +192,15 @@ main {
     width: 32px;
     height: 32px;
     margin: 20px;
-    font-size: 16px;
+    font-size: 18px;
     color: $c-color;
     background: #000;
     border: 0;
     border-radius: 100%;
+    svg {
+      width: 16px;
+      height: 16px;
+    }
   }
 }
 
