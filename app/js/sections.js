@@ -53,6 +53,9 @@ function getTools(tools) {
             case 'pencil': abbr = 'gridicons:pencil'; break;
             case 'palette': abbr = 'cib-webstorm'; break;
             case 'laptop': abbr = 'ic:outline-laptop-mac'; break;
+            case 'coffee': abbr = 'bx:bxs-coffee'; break;
+            case 'Chinese': abbr = 'uil:letter-chinese-a'; break;
+            case 'PhotoShop': abbr = 'cib:adobe-photoshop'; break;
         }
         toolString += '<span class="iconify" data-icon="' + abbr + '" data-inline="false" title="' + tool + '"></span>';
     });
