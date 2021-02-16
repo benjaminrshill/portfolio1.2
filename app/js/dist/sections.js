@@ -86,10 +86,13 @@ var elements = {
   sections: document.querySelectorAll('section'),
   overlay: document.querySelector('#overlay'),
   modal: document.querySelector('#modal'),
-  exit: document.querySelector('#exit'),
+  controls: document.querySelector('#controls'),
+  esc: document.querySelector('#esc'),
+  prev: document.querySelector('#prev'),
+  next: document.querySelector('#next'),
   itemBody: document.querySelector('#itemBody')
 };
-var viewer = [elements.overlay, elements.modal, elements.exit];
+var viewer = [elements.overlay, elements.modal, elements.controls];
 var vars = {
   q: items.length - 1,
   p: 0,
@@ -216,7 +219,13 @@ document.addEventListener('keyup', function (e) {
 elements.overlay.addEventListener('click', function () {
   hideSection(vars.p);
 });
-elements.exit.addEventListener('click', function () {
+elements.prev.addEventListener('click', function () {
+  prev();
+});
+elements.next.addEventListener('click', function () {
+  next();
+});
+elements.esc.addEventListener('click', function () {
   hideSection(vars.p);
 });
 elements.modal.addEventListener('touchstart', startTouch, false);

@@ -65,11 +65,14 @@ let elements = {
     sections: document.querySelectorAll('section'),
     overlay: document.querySelector('#overlay'),
     modal: document.querySelector('#modal'),
-    exit: document.querySelector('#exit'),
+    controls: document.querySelector('#controls'),
+    esc: document.querySelector('#esc'),
+    prev: document.querySelector('#prev'),
+    next: document.querySelector('#next'),
     itemBody: document.querySelector('#itemBody'),
 }
 
-let viewer = [elements.overlay, elements.modal, elements.exit];
+let viewer = [elements.overlay, elements.modal, elements.controls];
 
 let vars = {
     q: items.length - 1,
@@ -225,7 +228,15 @@ elements.overlay.addEventListener('click', function() {
     hideSection(vars.p);
 });
 
-elements.exit.addEventListener('click', function() {
+elements.prev.addEventListener('click', function() {
+    prev();
+});
+
+elements.next.addEventListener('click', function() {
+    next();
+});
+
+elements.esc.addEventListener('click', function() {
     hideSection(vars.p);
 });
 
