@@ -19,7 +19,7 @@ function makeSection(item) {
             + item[0].miniDesc
             + '</h4>'
             + '<h6>'
-            + item[0].tools
+            + getTools(item[0].tools)
             + '</h6>'
         + '</div>';
     section.classList.add('sueStorm');
@@ -37,6 +37,27 @@ items.forEach((item, i) => {
     });
 });
 
+function getTools(tools) {
+    let toolString = '';
+    tools.forEach(tool => {
+        let abbr = 'bx:bxl-' + tool.toLowerCase();
+        switch (tool) {
+            case 'CSS': abbr = 'bx:bxl-css3'; break;
+            case 'SCSS': abbr = 'bx:bxl-sass'; break;
+            case 'Node': abbr = 'bx:bxl-nodejs'; break;
+            case 'PHP': abbr = 'cib:php'; break;
+            case 'TypeScript': abbr = 'mdi:language-typescript'; break;
+            case 'GraphQL': abbr = 'cib:graphql'; break;
+            case 'MongoDB': abbr = 'cib:mongodb'; break;
+            case 'SQL': abbr = 'carbon:sql'; break;
+            case 'pencil': abbr = 'gridicons:pencil'; break;
+            case 'palette': abbr = 'cib-webstorm'; break;
+            case 'laptop': abbr = 'ic:outline-laptop-mac'; break;
+        }
+        toolString += '<span class="iconify" data-icon="' + abbr + '" data-inline="false" title="' + tool + '"></span> ';
+    });
+    return toolString;
+}
 
 // VARIABLES
 
@@ -89,6 +110,8 @@ function next() {
 
 function switchContent(i) {
     let linkBar = '';
+    let pDesc = items[i][0].desc.replace(/\n/g, '</p><p>');
+    let letters = items[i][0].title.length;
     items[i][0].links.forEach(link => {
         linkBar += link.link.length > 0 ?
             '<a tabindex="0" href="'
@@ -100,26 +123,22 @@ function switchContent(i) {
             + items[i][0].miniDesc
             + '</h4>';
     });
-    let pDesc = items[i][0].desc.replace(/\n/g, '</p><p>');
-    let letters = items[i][0].title.length;
     elements.modal.innerHTML =
         '<div>'
-            + '<div id="itemTitles">'
+            + '<div id="itemBody">'
                 + '<h3 style="padding-left: '
                 + (10 / letters)
-                + 'vw; font-size: '
-                + (80 / letters)
-                + 'vw; letter-spacing: '
-                + (10 / letters)
-                + 'vw; line-height: '
-                + (10 + (letters > 10 ? letters-4 : letters)) + 'vh">'
+                + 'px; font-size: '
+                + (letters > 10 ? 28 : letters > 8 ? 32 : 64)
+                + 'px; line-height:'
+                + (letters > 10 ? 8 : letters > 8 ? 12 : 28)
+                + 'px">'
                 + items[i][0].title
                 + '</h3>'
-            + '</div>'
-            + '<div id="itemBody"><div class="linkBar">'
+                + '<div class="linkBar">'
                 + linkBar
                 + '</div><h5>'
-                + items[i][0].tools
+                + getTools(items[i][0].tools)
                 + '</h5>'
                 + '<p>'
                 + pDesc
