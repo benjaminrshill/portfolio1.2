@@ -54,6 +54,7 @@ main {
         svg {
           width: 24px;
           height: 24px;
+          margin: 0 0 0 8px;
           fill: $b-color;
         }
       }
@@ -143,15 +144,14 @@ main {
         height: 40px;
         font-size: 12px;
         line-height: 40px;
-        color: #ff4550;
+        color: $b-color;
         background: #470e10;
         mix-blend-mode: hard-light;
         transition: 0.5s;
-      }
-      h4:hover {
-        color: $b-color;
-        background: #420707;
-        mix-blend-mode: normal;
+        &:hover {
+          background: #420707;
+          mix-blend-mode: normal;
+        }
       }
     }
     h5, h6 {
@@ -164,6 +164,7 @@ main {
       svg {
         width: 32px;
         height: 32px;
+        margin: 0 8px;
       }
     }
     h6 {
@@ -193,10 +194,15 @@ main {
     height: 32px;
     margin: 20px;
     font-size: 18px;
-    color: $c-color;
-    background: #000;
+    color: $b-color;
+    background: rgba(71, 14, 16, 0.6);
     border: 0;
     border-radius: 100%;
+    transition: 0.5s;
+    &:hover {
+      background: #420707;
+      mix-blend-mode: normal;
+    }
     svg {
       width: 16px;
       height: 16px;

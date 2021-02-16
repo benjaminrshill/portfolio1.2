@@ -76,7 +76,7 @@ function getTools(tools) {
         break;
     }
 
-    toolString += '<span class="iconify" data-icon="' + abbr + '" data-inline="false" title="' + tool + '"></span> ';
+    toolString += '<span class="iconify" data-icon="' + abbr + '" data-inline="false" title="' + tool + '"></span>';
   });
   return toolString;
 } // VARIABLES
@@ -219,14 +219,14 @@ document.addEventListener('keyup', function (e) {
 elements.overlay.addEventListener('click', function () {
   hideSection(vars.p);
 });
+elements.esc.addEventListener('click', function () {
+  hideSection(vars.p);
+});
 elements.prev.addEventListener('click', function () {
   prev();
 });
 elements.next.addEventListener('click', function () {
   next();
-});
-elements.esc.addEventListener('click', function () {
-  hideSection(vars.p);
 });
 elements.modal.addEventListener('touchstart', startTouch, false);
 elements.modal.addEventListener('touchmove', moveTouch, false);
