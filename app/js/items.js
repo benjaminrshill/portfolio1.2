@@ -30,7 +30,7 @@ const items = [
                 ["React", "HTML5", "CSS"],
             "desc":
                 "Built with React hooks, Turtledot is a weekly itemiser designed for my own use (though hopefully someone else might find it helpful one day!).\n" +
-                "Essentially the obligatory todo app, with a twist: it's actually useful! Items/tasks can be created and given a weekly target and colour category; items can be added to 'this week' and 'next week' and scheduled by day; and items scheduled for this week can be checked off, with met targets given a satisfying 'blackout' to congratulate you.\n" +
+                "Essentially the obligatory todo app, but with a twist: it's actually useful. Items/tasks can be created and given a weekly target and colour category; items can be added to 'this week' and 'next week' and scheduled by day; and items scheduled for this week can be checked off, with met targets given a satisfying 'blackout' to congratulate you.\n" +
                 "The app uses localStorage, and is fully functional offline - add it to your home screen!\n" +
                 "If you'd like to give it a try, it is designed for mobile, though it works just as well on desktop.",
             "image": "./app/images/items/turtledot.jpg",
@@ -52,9 +52,9 @@ const items = [
                 ["React", "Node", "MongoDB", "GraphQL"],
             "desc":
                 "Over five days our four-person team created the beginnings of a social app giving users the opportunity to post something they learned that day.\n" +
-                "The app currently enables users to sign up and log in, post lessons, view user profiles, follow and unfollow other users, and view a timeline of lessons from themselves and those they are following.\n" +
-                "I prototyped the design in Figma, created an HTML/CSS template for the team to work from when implementing components, and then worked primarily with another team member on the front end architecture and major features: sign up and log in, post lessons, follow users, etc.\n" +
-                "We are currently working on cleaning it up in preparation for a live version.",
+                "I prototyped the design in Figma, created an HTML/CSS template for the team to work from when implementing components, and then worked primarily with another team member on the front end architecture and major features.\n" +
+                "Another team member and I then worked further on the project after graduation to polish it a little and add a few features.\n" +
+                "Users can now sign up and log in, post lessons, view user profiles, follow and unfollow other users, like and share lessons, and view a timeline of lessons from themselves and those they are following.",
             "image": "./app/images/items/tilly.jpg",
             "links": [
                 {

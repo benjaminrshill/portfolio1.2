@@ -122,10 +122,14 @@ function switchContent(i) {
         linkBar += link.link.length > 0 ?
             '<a tabindex="0" href="'
             + link.link
-            + '" target="_blank" rel="noopener noreferrer"><h4>'
+            + '" target="_blank" rel="noopener noreferrer"><h4 data-content="'
+            + link.title
+            + '">'
             + link.title
             + '</h4></a>'
-            : '<h4>'
+            : '<h4 data-content="'
+            + items[i][0].miniDesc
+            + '">'
             + items[i][0].miniDesc
             + '</h4>';
     });
@@ -138,7 +142,9 @@ function switchContent(i) {
                 + (letters > 10 ? 28 : letters > 8 ? 32 : 64)
                 + 'px; line-height:'
                 + (letters > 10 ? 8 : letters > 8 ? 12 : 28)
-                + 'px">'
+                + 'px" data-content="'
+                + items[i][0].title
+                + '">'
                 + items[i][0].title
                 + '</h3>'
                 + '<div class="linkBar">'

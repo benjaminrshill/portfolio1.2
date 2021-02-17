@@ -148,9 +148,9 @@ function switchContent(i) {
   var pDesc = items[i][0].desc.replace(/\n/g, '</p><p>');
   var letters = items[i][0].title.length;
   items[i][0].links.forEach(function (link) {
-    linkBar += link.link.length > 0 ? '<a tabindex="0" href="' + link.link + '" target="_blank" rel="noopener noreferrer"><h4>' + link.title + '</h4></a>' : '<h4>' + items[i][0].miniDesc + '</h4>';
+    linkBar += link.link.length > 0 ? '<a tabindex="0" href="' + link.link + '" target="_blank" rel="noopener noreferrer"><h4 data-content="' + link.title + '">' + link.title + '</h4></a>' : '<h4 data-content="' + items[i][0].miniDesc + '">' + items[i][0].miniDesc + '</h4>';
   });
-  elements.modal.innerHTML = '<div>' + '<div id="itemBody">' + '<h3 style="padding-left: ' + 10 / letters + 'px; font-size: ' + (letters > 10 ? 28 : letters > 8 ? 32 : 64) + 'px; line-height:' + (letters > 10 ? 8 : letters > 8 ? 12 : 28) + 'px">' + items[i][0].title + '</h3>' + '<div class="linkBar">' + linkBar + '</div><h5>' + getTools(items[i][0].tools) + '</h5>' + '<p>' + pDesc + '</p>' + '</div>' + '</div>';
+  elements.modal.innerHTML = '<div>' + '<div id="itemBody">' + '<h3 style="padding-left: ' + 10 / letters + 'px; font-size: ' + (letters > 10 ? 28 : letters > 8 ? 32 : 64) + 'px; line-height:' + (letters > 10 ? 8 : letters > 8 ? 12 : 28) + 'px" data-content="' + items[i][0].title + '">' + items[i][0].title + '</h3>' + '<div class="linkBar">' + linkBar + '</div><h5>' + getTools(items[i][0].tools) + '</h5>' + '<p>' + pDesc + '</p>' + '</div>' + '</div>';
 }
 
 function focusLink() {
