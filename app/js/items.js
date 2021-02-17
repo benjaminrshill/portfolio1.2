@@ -1,29 +1,6 @@
 const items = [
     [
         {
-            "title": "Bio",
-            "miniDesc": "A little about me",
-            "tools":
-                ["coffee", "laptop", "palette", "pencil", "PhotoShop", "Chinese"],
-            "desc":
-                "I am an enthusiastic full stack junior web developer.\n" +
-                "After some years following the path of an artist, while building my own gallery website (and deciding to learn some JavaScript to get it behaving the way I wanted), I discovered a real enjoyment of coding.\n" +
-                "Where problem solving, clean code, and UI & graphic design merge into one dynamic whole, there is always something to learn and be fascinated by, and so much potential for innovation, interactivity, and an incredible user experience.\n" +
-                "In the past year, both before and since joining iO Academy as a full-stack student, I’ve greatly enjoyed learning both JavaScript and PHP and working alongside my teammates on various group projects.\n" +
-                "In my life outside of code, I paint, and spend a lot of time attempting various physical pursuits, including juggling, strength training, running, and bouldering.  Fluent in Chinese, I spent five years living in Beijing studying Mandarin and tattooing.",
-            "image": "./app/images/me.jpg",
-            "links": [
-                {
-                    title: "GitHub",
-                    link: "https://github.com/benjaminrshill/"
-                },{
-                    title: "Scrum cert",
-                    link: "./app/images/CSM_Certificate.pdf"
-                }
-            ]
-        }
-    ],[
-        {
             "title": "turtledot",
             "miniDesc": "Weekly itemiser",
             "tools":
@@ -197,6 +174,29 @@ const items = [
                 {
                     title: "live",
                     link: "https://dev.io-academy.uk/projects/2020-sept/2020-sept-sportsmvp/"
+                }
+            ]
+        }
+    ],[
+        {
+            "title": "Bio",
+            "miniDesc": "A little about me",
+            "tools":
+                ["coffee", "laptop", "palette", "pencil", "PhotoShop", "Chinese"],
+            "desc":
+                "I am an enthusiastic full stack junior web developer.\n" +
+                "After some years following the path of an artist, while building my own gallery website (and deciding to learn some JavaScript to get it behaving the way I wanted), I discovered a real enjoyment of coding.\n" +
+                "Where problem solving, clean code, and UI & graphic design merge into one dynamic whole, there is always something to learn and be fascinated by, and so much potential for innovation, interactivity, and an incredible user experience.\n" +
+                "In the past year, both before and since joining iO Academy as a full-stack student, I’ve greatly enjoyed learning both JavaScript and PHP and working alongside my teammates on various group projects.\n" +
+                "In my life outside of code, I paint, and spend a lot of time attempting various physical pursuits, including juggling, strength training, running, and bouldering.  Fluent in Chinese, I spent five years living in Beijing studying Mandarin and tattooing.",
+            "image": "./app/images/me.jpg",
+            "links": [
+                {
+                    title: "GitHub",
+                    link: "https://github.com/benjaminrshill/"
+                },{
+                    title: "Scrum cert",
+                    link: "./app/images/CSM_Certificate.pdf"
                 }
             ]
         }
