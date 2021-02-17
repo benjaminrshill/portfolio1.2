@@ -249,6 +249,6 @@ elements.next.addEventListener('click', function() {
     next();
 });
 
-elements.modal.addEventListener('touchstart', startTouch, false);
-elements.modal.addEventListener('touchmove', moveTouch, false);
-elements.modal.addEventListener('touchend', endTouch, false);
+elements.modal.addEventListener('touchstart', startTouch,{passive: true});
+elements.modal.addEventListener('touchmove', moveTouch, {passive: true});
+elements.modal.addEventListener('touchend', endTouch, {passive: true});

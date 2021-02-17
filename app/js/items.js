@@ -11,7 +11,7 @@ const items = [
                 "Where problem solving, clean code, and UI & graphic design merge into one dynamic whole, there is always something to learn and be fascinated by, and so much potential for innovation, interactivity, and an incredible user experience.\n" +
                 "In the past year, both before and since joining iO Academy as a full-stack student, I’ve greatly enjoyed learning both JavaScript and PHP and working alongside my teammates on various group projects.\n" +
                 "In my life outside of code, I paint, and spend a lot of time attempting various physical pursuits, including juggling, strength training, running, and bouldering.  Fluent in Chinese, I spent five years living in Beijing studying Mandarin and tattooing.",
-            "image": "https://images.unsplash.com/photo-1507963901243-ebfaecd5f2f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2758&q=80",
+            "image": "./app/images/me.jpg",
             "links": [
                 {
                     title: "GitHub",
