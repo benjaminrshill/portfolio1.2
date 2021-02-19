@@ -30,7 +30,7 @@ const items = [
             "desc":
                 "Over five days our four-person team created the beginnings of a social app giving users the opportunity to post something they learned that day.\n" +
                 "I prototyped the design in Figma, created an HTML/CSS template for the team to work from when implementing components, and then worked primarily with another team member on the front end architecture and major features.\n" +
-                "Another team member and I then worked further on the project after graduation to polish it a little and add a few features.\n" +
+                "Another team member and I then worked further on the project to polish it and add a few features.\n" +
                 "Users can now sign up and log in, post lessons, view user profiles, follow and unfollow other users, like and share lessons, and view a timeline of lessons from themselves and those they are following.",
             "image": "./app/images/items/tilly.jpg",
             "links": [
@@ -54,7 +54,7 @@ const items = [
                 ["PHP", "HTML5", "CSS", "SQL"],
             "desc":
                 "My first project using PHP, we were given four days to create a simple collection app, required to retrieve and display a collection of items from a database and be able to add and edit items. Users can also filter and search, sort by title, year, etc, and delete items.\n" +
-                "Though a simple project, not utilising the later object-oriented programming and relevant frameworks that we have since learned, I believe that in context it offers an honest glimpse of my ability to deliver beyond the MVP in a short time.\n",
+                "Though a simple project, not utilising the later object-oriented programming and relevant frameworks that I have since learned, I believe that in context it offers an honest glimpse of my ability to deliver beyond the MVP in a short time.\n",
             "image": "./app/images/items/myLibrary.jpg",
             "links": [
                 {
