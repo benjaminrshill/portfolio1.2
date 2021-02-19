@@ -93,9 +93,9 @@ var items = [[{
   }]
 }], [{
   "title": "The Real MVP",
-  "miniDesc": "Intro to OOP",
+  "miniDesc": "OOPHP",
   "tools": ["PHP", "SCSS", "HTML5", "SQL"],
-  "desc": "With a focus on SOLID principles, the goal was to connect to an API and instantiate classes with sports teams, displaying the data simply on the front end, with basic filters.\n" + "As usual, our team worked beautifully together and everyone was able to do a little bit of everything, setting us up nicely for the Slim project mentioned previously (iO Academy Portal).\n",
+  "desc": "With a focus on SOLID principles, the goal was to connect to an API and instantiate classes with sports teams, displaying the data simply on the front end, with basic filters.",
   "image": "./app/images/items/realmvp.jpg",
   "links": [{
     title: "code",
@@ -103,6 +103,16 @@ var items = [[{
   }, {
     title: "live",
     link: "https://dev.io-academy.uk/projects/2020-sept/2020-sept-sportsmvp/"
+  }]
+}], [{
+  "title": "F&amp;F",
+  "miniDesc": "Pub website",
+  "tools": ["HTML5", "CSS", "PHP", "JavaScript"],
+  "desc": "Created some years ago, a simple website for a local business; I worked closely with the owner and a photographer to achieve a look that the owner was pleased with and that reflects the atmosphere of the establishment.\n" + "For the image slider I used a little PHP to find and loop through whatever images are in the relevant directory, and a small function in JavaScript for the animation.\n",
+  "image": "./app/images/items/fandf.jpg",
+  "links": [{
+    title: "live",
+    link: "https://www.foresterandflower.com/"
   }]
 }], [{
   "title": "Bio",
